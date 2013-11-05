@@ -1,0 +1,42 @@
+%link{href: "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css", rel: "stylesheet"}/
+%script{src: "http://code.jquery.com/jquery-1.9.1.js"}
+%script{src: "http://code.jquery.com/ui/1.10.3/jquery-ui.js"}
+
+.left_styles_block
+  - @styles.each do |style|
+    = style.name
+    %br
+
+#tabs
+  %ul
+    - i = 0
+    - @styles.each do |style|
+      - i = i + 1
+      %li
+        %a{href: "#fragment-" + i.to_s}
+          %span
+            = style.name
+  - i = 0
+  - @styles.each do |style|
+    - i = i + 1
+    %div{id: 'fragment-'+ i.to_s}
+      %p
+        = style.description
+
+  -##fragment-1
+  -#  %p First tab is active by default:
+  -#  %pre
+  -#    %code $( "#tabs" ).tabs();
+  -##fragment-2
+  -#  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  -#  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  -##fragment-3
+  -#  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  -#  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+  -#  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+
+:javascript
+  $(function() {
+    $( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
+    $( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
+  });
