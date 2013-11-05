@@ -11,8 +11,8 @@ Feature: Galleries
 
   Scenario: show specific gallery
     Given Gallery named "g1"
-    And Gallery named "g2"
-    And 3 photo in gallery "g1"
+      And Gallery named "g2"
+      And 3 photo in gallery "g1"
     And 2 photo in gallery "g2"
     When I go to "/galleries"
      And I click to list element "g1"
