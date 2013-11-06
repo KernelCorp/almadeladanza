@@ -435,35 +435,20 @@ qq.FileUploaderBasic.prototype = {
         var id = this._handler.add(fileContainer);
         var fileName = this._handler.getName(id);
         var submit
-        var globalOwner = this
         
         if (this._options.onSubmit(id, fileName) !== false){
             this._onSubmit(id, fileName, this._options.params);
             submitList = document.getElementsByClassName('qq-save-name');
             submit = submitList[submitList.length-1];
-            submit.addEventListener('click', function(){
-                parent = this.parentNode.parentNode;
-                if (parent.getElementsByClassName('qq-image-name')[0].value != ''){
-                    if (parent.getElementsByClassName('error-message').length)
-                        parent.getElementsByClassName('error-message')[0].remove();
-                    id = parent.getElementsByClassName('qq-id')[0].value;
-                    params = globalOwner._find(globalOwner._element, 'image_params').value;
-                    ObjParams = new Object();
-                    ObjParams.authenticity_token = params;
-                    ObjParams.name = parent.getElementsByClassName('qq-image-name')[0].value;
-                    globalOwner._handler.upload(id, ObjParams);
 
-                    }
-                else {
-                    if (!parent.getElementsByClassName('error-message').length){
-                        validate_message = document.createElement('p');
-                        validate_message.className = 'error-message';
-                        validate_message.textContent = "Имя обязательно для заполнения";
-                        parent.getElementsByClassName('qq-new-image')[0].appendChild(validate_message);
-                    }
-                }
-                return false;
-            });
+//            id = parent.getElementsByClassName('qq-id')[0].value;
+            params = this._find(this._element, 'image_params').value;
+            ObjParams = new Object();
+            ObjParams.authenticity_token = params;
+            this._handler.upload(id, ObjParams);
+
+
+
         }
     },      
     _validateFile: function(file){
@@ -575,8 +560,6 @@ qq.FileUploader = function(o){
                 '<span class="qq-upload-size"></span>' +
                 '<img class="qq-image-preview"></img>' +
                 '<div class="qq-new-image">'+
-                '<input class="qq-image-name" type="text">'+
-                '<button class="qq-save-name">{nameSubmit}</button>'+
                 '</div>'+
                 '<a class="qq-upload-cancel" href="#">{cancelButtonText}</a>' +
                 '<span class="qq-upload-failed-text">{failUploadtext}</span>' +

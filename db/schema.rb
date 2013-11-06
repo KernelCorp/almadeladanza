@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20131104101018) do
     t.string   "path_content_type"
     t.integer  "path_file_size"
     t.datetime "path_updated_at"
+    t.string   "title"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
   end
@@ -48,8 +49,15 @@ ActiveRecord::Schema.define(:version => 20131104101018) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.string   "type"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "name"
+    t.text     "biography"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
