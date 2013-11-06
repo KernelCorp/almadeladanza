@@ -1,11 +1,7 @@
-%link{href: "http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css", rel: "stylesheet"}/
+-#На этой странице используется JQuery UI: http://jqueryui.com/tabs/
+
 %script{src: "http://code.jquery.com/jquery-1.9.1.js"}
 %script{src: "http://code.jquery.com/ui/1.10.3/jquery-ui.js"}
-
-.left_styles_block
-  - @styles.each do |style|
-    = style.name
-    %br
 
 #tabs
   %ul
@@ -22,18 +18,6 @@
     %div{id: 'fragment-'+ i.to_s}
       %p
         = style.description
-
-  -##fragment-1
-  -#  %p First tab is active by default:
-  -#  %pre
-  -#    %code $( "#tabs" ).tabs();
-  -##fragment-2
-  -#  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-  -#  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-  -##fragment-3
-  -#  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-  -#  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-  -#  Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 
 :javascript
   $(function() {
