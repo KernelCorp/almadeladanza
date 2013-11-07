@@ -1,3 +1,47 @@
 lesson_one:
+  id: 1
+  day: 6
+  time: 1
+  dance_style_id: 1
+
+lesson_two:
+  id: 2
+  day: 6
+  time: 2
+  dance_style_id: 1
+
+lesson_three:
+  id: 3
+  day: 6
+  time: 6
+  dance_style_id: 1
+
+lesson_four:
+  id: 4
   day: 1
-  time:
+  time: 1
+  dance_style_id: 1
+
+lesson_five:
+  id: 5
+  day: 1
+  time: 2
+  dance_style_id: 1
+
+lesson_six:
+  id: 6
+  day: 1
+  time: 6
+  dance_style_id: 1
+
+lesson_seven:
+  id: 7
+  day: 1
+  time: 1
+  dance_style_id: 2
+
+lesson_eight:
+  id: 8
+  day: 1
+  time: 2
+  dance_style_id: 2

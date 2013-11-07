@@ -8,6 +8,8 @@ Almadeladanza::Application.routes.draw do
 
   resources :dance_styles
 
+  resources :lessons, only: [:index, :show]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

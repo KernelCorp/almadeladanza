@@ -23,6 +23,7 @@ class Lesson < ActiveRecord::Base
   attr_accessible :day, :time
   belongs_to :coach
   belongs_to :hall
+  belongs_to :dance_style
 
   def day_as_string
     LessonDay[self.day]
@@ -38,6 +39,12 @@ class Lesson < ActiveRecord::Base
 
   def day=(value)
     write_attribute :day, day_to_i(value)
+  end
+
+  def self.day_filter(day)
+    return Lesson.where(day: day) if day.is_a? Integer
+    return Lesson.where(day: day.to_i) if (day.is_a? String) && (day =~ /^\d+$/)
+    return Lesson.where(day: Lesson::LessonDay.key(day)) if (day.is_a? String) && (day !=~ /^\d+$/)
   end
 
   private

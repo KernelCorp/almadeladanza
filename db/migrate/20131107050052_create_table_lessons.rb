@@ -5,6 +5,7 @@ class CreateTableLessons < ActiveRecord::Migration
       t.integer :time
       t.references :coach
       t.references :hall
+      t.references :dance_style
       t.timestamps
     end
   end
