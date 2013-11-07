@@ -3,6 +3,8 @@
 %script{src: "http://code.jquery.com/jquery-1.9.1.js"}
 %script{src: "http://code.jquery.com/ui/1.10.3/jquery-ui.js"}
 
+%div
+  %img.dance_styles_bg{:src => '/images/dance_styles_background.png'}
 #tabs
   %ul
     - i = 0
@@ -18,6 +20,10 @@
     %div{id: 'fragment-'+ i.to_s}
       %p
         = style.description
+      %h2 Учителя танцев:
+      - style.coaches.each do |coach|
+        -#TODO Реализовать вывод коачей с аватарками.
+        = coach.name
 
 :javascript
   $(function() {

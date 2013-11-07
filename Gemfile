@@ -44,6 +44,8 @@ gem 'unicorn', :platforms => :ruby
 group :test do
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'rspec-rails'
+  gem 'selenium-webdriver'
 end
 
 # To use ActiveModel has_secure_password
