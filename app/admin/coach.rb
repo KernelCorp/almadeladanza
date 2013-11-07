@@ -13,6 +13,7 @@ ActiveAdmin.register Coach do
   form do |f|
     f.inputs "Coach Details" do
       f.input :name
+      f.input :biography
       f.input :email
       f.input :password
       f.input :password_confirmation
