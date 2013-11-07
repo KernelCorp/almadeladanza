@@ -8,6 +8,19 @@ ActiveAdmin.register Coach do
     default_actions
   end
 
+  show do |coach|
+    attributes_table do
+      row :avatar do
+        image_tag coach.avatar.url(:thumb)
+      end
+      row :name
+      row :email
+      row :biography do
+        raw coach.biography
+      end
+    end
+  end
+
   filter :email
 
   form do |f|
@@ -17,6 +30,7 @@ ActiveAdmin.register Coach do
       f.input :email
       f.input :password
       f.input :password_confirmation
+      f.input :avatar, :as => :file
     end
     f.actions
   end
