@@ -7,6 +7,12 @@ ActiveAdmin.register AdminUser do
     default_actions
   end
 
+  show do |admin_user|
+    attributes_table do
+      row :email
+    end
+  end
+
   filter :email
 
   form do |f|
