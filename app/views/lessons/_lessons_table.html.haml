@@ -1,0 +1,14 @@
+%table#schedule
+  %tr
+    %th
+    - 0.upto(6) do |day|
+      %th
+        = t(Lesson::LessonDay[day])
+  - 0.upto(7) do |time|
+    %tr
+      %td
+        = raw style_time Lesson::LessonTime[time]
+        - 0.upto(6) do |day|
+          %td{class: 'sc-day-'+day.to_s+' sc-time-'+time.to_s }
+            .hall-1
+            .hall-2

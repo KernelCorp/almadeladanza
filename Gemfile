@@ -11,6 +11,7 @@ gem 'activeadmin'
 gem 'meta_search', '>= 1.1.0.pre'
 gem 'cancan'
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 gem 'paperclip'
 
 # Gems used only for assets and not required

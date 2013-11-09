@@ -3,7 +3,9 @@
 %script{src: "http://code.jquery.com/jquery-1.9.1.js"}
 %script{src: "http://code.jquery.com/ui/1.10.3/jquery-ui.js"}
 
-#tabs
+
+
+#tabs.lessons
   %ul
     - i = 0
     - @styles.each do |style|
@@ -13,8 +15,8 @@
           %span
             = style.name
   %div#fragment-1
-    %p
-      Расписание будет сдесь
+    = render partial: 'lessons_table'
+
 
 :javascript
   $(function() {
