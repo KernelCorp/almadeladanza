@@ -1,23 +1,23 @@
 -#На этой странице используется JQuery UI: http://jqueryui.com/tabs/
 
-%script{src: "http://code.jquery.com/jquery-1.9.1.js"}
-%script{src: "http://code.jquery.com/ui/1.10.3/jquery-ui.js"}
+-#%script{src: "http://code.jquery.com/jquery-1.9.1.js", "data-turbolinks-track" => ""}
+-#%script{src: "http://code.jquery.com/ui/1.10.3/jquery-ui.js", "data-turbolinks-track" => ""}
 
 %div
   %img.dance_styles_bg{:src => '/images/dance_styles_background.png'}
-#tabs
-  %ul
+#tabs.ui-tabs-vertical
+  %ul.ui-tabs-nav
     - i = 0
     - @styles.each do |style|
       - i = i + 1
       %li
-        %a{href: "#fragment-" + i.to_s}
+        %a.ui-style-name.ui-tabs-anchor{href: "#fragment-" + i.to_s}
           %span
             = style.name
   - i = 0
   - @styles.each do |style|
     - i = i + 1
-    %div{id: 'fragment-'+ i.to_s}
+    %div.ui-widget-content.ui-tabs-panel{id: 'fragment-'+ i.to_s}
       %p
         = style.description
       %h2 Учителя танцев:
@@ -25,8 +25,3 @@
         -#TODO Реализовать вывод коачей с аватарками.
         = coach.name
 
-:javascript
-  $(function() {
-    $( "#tabs" ).tabs().addClass( "ui-tabs-vertical ui-helper-clearfix" );
-    $( "#tabs li" ).removeClass( "ui-corner-top" ).addClass( "ui-corner-left" );
-  });
