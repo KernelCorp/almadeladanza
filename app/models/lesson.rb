@@ -20,7 +20,7 @@ class Lesson < ActiveRecord::Base
       7 => '20.30-21.45'
   }
 
-  attr_accessible :day, :time
+  attr_accessible :day, :time, :dance_style_id, :coach_id, :hall_id
   belongs_to :coach
   belongs_to :hall
   belongs_to :dance_style

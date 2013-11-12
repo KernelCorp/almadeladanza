@@ -5,6 +5,7 @@ class Coach < User
       :path => ":rails_root/public/coaches/:filename",
       :url => "/coaches/:filename"
   has_many :lessons
+  has_and_belongs_to_many :dance_styles
 
 
 
