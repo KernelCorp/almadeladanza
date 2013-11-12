@@ -6,9 +6,11 @@ Almadeladanza::Application.routes.draw do
 
   root to: 'admin/dashboard#index'
 
-  resources :dance_styles
+  resources :dance_styles, only: [:index]
 
   resources :lessons, only: [:index, :show]
+
+  resources :interior_images, only: [:index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
