@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
+//= require jquery.ui.tabs
+//= require jquery.turbolinks
+//= require turbolinks
+//= require_tree ./lib/

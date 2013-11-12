@@ -1,0 +1,17 @@
+-#На этой странице используется JQuery UI: http://jqueryui.com/tabs/
+
+#tabs1.lessons.ui-tabs-vertical
+  %ul.ui-tabs-nav
+    %li
+      %a.ui-tabs-anchor{href: "#fragment-1"}
+        %span.ui-style-name{id: '', "data-lesson-id" => ''}
+          Все стили
+    - i = 0
+    - @styles.each do |style|
+      - i = i + 1
+      %li
+        %a.ui-tabs-anchor{href: "#fragment-1"}
+          %span.ui-style-name{id: 'style-'+style.id.to_s, "data-lesson-id" => style.id.to_s}
+            = style.name
+  %div.ui-tabs-panel#fragment-1.ui-widget-content
+    = render partial: 'lessons_table'

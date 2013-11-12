@@ -1,0 +1,38 @@
+.menu_block
+  position: relative
+
+  ul.menu
+    list-style: none
+    display: block
+    margin: 0 auto 20px
+    padding: 0
+    font-size: 20px
+    text-align: center
+
+    li
+      vertical-align: top
+      display: inline-block
+      margin-top: 100px
+      font:
+        family: Mirta
+        style: normal
+        size: 20px
+      &:first-child a
+        padding-left: 0px
+      &:last-child a
+        padding-right: 0px
+      a
+        color: #5d2e49
+        display: block
+        padding: 2px 15px
+        text-decoration: none
+        &:hover
+          text-decoration: underline
+        &.active,
+        &.current
+          text-decoration: underline
+
+    li.menu_logo
+      margin-top: 0px
+
+

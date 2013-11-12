@@ -1,11 +1,16 @@
 ActiveAdmin.register AdminUser do
-
   index do
     column :email
     column :current_sign_in_at
     column :last_sign_in_at
     column :sign_in_count
     default_actions
+  end
+
+  show do |admin_user|
+    attributes_table do
+      row :email
+    end
   end
 
   filter :email
