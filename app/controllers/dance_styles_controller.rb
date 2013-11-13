@@ -5,6 +5,4 @@ class DanceStylesController < ApplicationController
     render
   end
 
-
-
 end

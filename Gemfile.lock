@@ -49,6 +49,7 @@ GEM
       sass (>= 3.2.0)
       thor
     builder (3.0.4)
+    bxslider-rails (4.1.0)
     cancan (1.6.10)
     capistrano (2.15.5)
       highline
@@ -260,6 +261,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin
+  bxslider-rails
   cancan
   capistrano
   capybara

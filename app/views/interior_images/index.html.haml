@@ -1,0 +1,4 @@
+%ul.bxslider
+  - @images.each do |image|
+    %li
+      %img{:src => image.path.url(:big), 'data-image-url' => image.path.url(:original)}
