@@ -1,3 +1,6 @@
+//= require_self
+//= require_tree ./lib/
+
 @import "partials/*"
 @import "lib/*"
 @import "partials/lesson_table"
@@ -5,6 +8,9 @@
 body
   background-color: #f4ece1
   margin: 0px
+
+body, html
+  height: 100%
 
 h2
   font:
@@ -17,19 +23,27 @@ h2
 #document
   position: relative
   min-height: 100%
+  &:after
+    display: block
+    content: ""
 
 #wrapper-media
   margin: 0 auto
   width: 960px
 
 .content
+  position: relative
   margin: 0 auto
   width: 960px
+  display: table
+  min-height: 640px
 
 .gradient
+  position: absolute
   background: #dc6d48 //for old browsers
   background: linear-gradient(to right, #dc6d48, #5d2e49)
   padding: 10px
-  border: 0px solid #333
-  margin-top: 150px
-  margin-bottom: -175px
+  top: 153px
+  width: 100%
+
+

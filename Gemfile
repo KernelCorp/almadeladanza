@@ -13,6 +13,7 @@ gem 'cancan'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'paperclip'
+gem 'bxslider-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

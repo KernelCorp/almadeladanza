@@ -1,9 +1,4 @@
-#myCarousel.carousel.slide
-  / Carousel items
-  .carousel-inner
-    - @images.each do |image|
-      .item
-        %img{:src => image.path.url(:small), :title => '123'}
-  / Carousel nav
-  %a.carousel-control.left{"data-slide" => "prev", href: "#myCarousel"} ‹
-  %a.carousel-control.right{"data-slide" => "next", href: "#myCarousel"} ›
+%ul.bxslider
+  - @images.each do |image|
+    %li
+      %img{:src => image.path.url(:big), 'data-image-url' => image.path.url(:big)}
