@@ -1,4 +1,5 @@
 ActiveAdmin.register Coach do
+
   index do
     column :name
     column :email
