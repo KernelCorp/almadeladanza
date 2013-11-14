@@ -35,6 +35,6 @@ production:
   reconnect: false
   database: almadeladanza_production
   pool: 5
-  username: root
-  password:
+  username: almadeladanza
+  password: CczrUY18
 
