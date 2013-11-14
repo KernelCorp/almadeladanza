@@ -2,7 +2,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
   def migrate(direction)
     super
     # Create a default user
-    User.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password') if direction == :up
+    AdminUser.create!(:email => 'admin@example.com', :password => 'password', :password_confirmation => 'password') if direction == :up
   end
 
   def change
@@ -24,6 +24,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.datetime :last_sign_in_at
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
+
+      t.string :type
 
       ## Confirmable
       # t.string   :confirmation_token
