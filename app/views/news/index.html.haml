@@ -1,0 +1,11 @@
+#news_container
+  %p
+    Новости:
+  - @news.each do |news|
+    #news_block
+      #news_time
+        = news.created_at.strftime("%m.%d.%Y")
+      #news_title
+        = news.title
+      #news_details
+        %a{href: '/news/' + news.id.to_s}Подробнее
