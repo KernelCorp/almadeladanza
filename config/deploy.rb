@@ -17,7 +17,7 @@ set :keep_releases, 5
 set :rvm_ruby_string, 'ruby-2.0.0-p247'
 
 set :scm, :git
-set :repository,  "https://github.com/KernelCorp/vote.git"
+set :repository,  "https://github.com/KernelCorp/almadeladanza.git"
 set :branch, "master" # Ветка из которой будем тянуть код для деплоя.
 set :deploy_via, :remote_cache # Указание на то, что стоит хранить кеш репозитария локально и с каждым деплоем лишь подтягивать произведенные изменения. Очень актуально для больших и тяжелых репозитариев.
 
