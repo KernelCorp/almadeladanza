@@ -4,13 +4,15 @@ Almadeladanza::Application.routes.draw do
 
   ActiveAdmin.routes(self)
 
-  root to: 'admin/dashboard#index'
+  root to: "news#index"
 
   resources :dance_styles, only: [:index]
 
   resources :lessons, only: [:index, :show]
 
   resources :interior_images, only: [:index]
+
+  resources :news, only: [:index, :show]
 
   resources :gallery_events, only: [:index]
 
