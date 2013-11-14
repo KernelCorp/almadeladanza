@@ -10,5 +10,10 @@ class LessonsController < ApplicationController
     end
   end
 
+  def show
+    @lesson = Lesson.find params[:id]
+    render :partial => 'popover_content'
+  end
+
 
 end

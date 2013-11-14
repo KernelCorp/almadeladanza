@@ -1,0 +1,3 @@
+class InteriorImage < Image
+
+end

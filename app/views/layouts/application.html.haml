@@ -4,8 +4,8 @@
   %meta{:charset => "utf-8"}
   %title alma de la Danza
 
-  %script{src: "http://code.jquery.com/jquery-1.9.1.js",  "data-turbolinks-track" => ""}
-  %script{src: "http://code.jquery.com/ui/1.10.3/jquery-ui.js",  "data-turbolinks-track" => ""}
+  -#%script{src: "http://code.jquery.com/jquery-1.9.1.js",  "data-turbolinks-track" => ""}
+  -#%script{src: "http://code.jquery.com/ui/1.10.3/jquery-ui.js",  "data-turbolinks-track" => ""}
 
   = stylesheet_link_tag    "application", :media => "all", "data-turbolinks-track" => ""
   = javascript_include_tag "application"
@@ -19,5 +19,5 @@
       = render :partial => 'menu/menu'
       .content
         = yield
-    #footer_spacer
-      = render :partial => '/footer'
+  #footer_spacer
+    = render :partial => '/footer'
