@@ -1,0 +1,27 @@
+.popover-head
+  = link_to @lesson.dance_style.name, dance_styles_path
+.popover-body
+  .description
+    = @lesson.dance_style.description
+  .lesson-info
+    %span.key
+      день:
+    = t(@lesson.day_as_string)
+  .lesson-info
+    %span.key
+      время:
+    = raw style_time @lesson.time_as_string
+  .lesson-info
+    %span.key
+      зал
+    = t(@lesson.hall.name)
+  .lesson-info
+    %span.key
+      занятия ведет:
+    - @coach = @lesson.coach
+    = link_to @coach.name, '#'
+  .button-wrap
+    %button.sign
+      Записаться
+
+

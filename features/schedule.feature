@@ -54,12 +54,13 @@ Feature: Schedule
      But I should see "close dance" in cell ("Monday", 11:30), hall 2
      And I should see "close dance" in cell ("Thursday", 20:30), hall 1
 
+  @javascript
   Scenario: Click to specific lesson
-    Given Style named "yoga" with description "yogaga"
+    Given Style with description  "yoga", "yogaga"
       And Coach named "Stek", Style - "yoga"
       And "yoga" lesson at on "Tuesday" at 11:30 in hall 1 coach "Stek"
     When I go to "/lessons"
-     And I click to lesson "yoga" on Tuesday at 11:30
+     And I click to lesson "yoga" on "Tuesday" at 11:30, hall 1
     Then I should see pop up
      And I should see link to coach "Stek" in popup
      And I should see link to style "yoga" in popup
