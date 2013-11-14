@@ -1,4 +1,4 @@
-!
+/*!
  * Bootstrap v2.3.2
  *
  * Copyright 2013 Twitter, Inc
@@ -6,7 +6,7 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Designed and built with all the love in the world by @mdo and @fat.
-
+ */
 
 .clearfix {
   *zoom: 1;
@@ -221,16 +221,6 @@ textarea {
   }
 }
 
-a {
-  color: #0088cc;
-  text-decoration: none;
-}
-
-a:hover,
-a:focus {
-  color: #005580;
-  text-decoration: underline;
-}
 
 .img-rounded {
   -webkit-border-radius: 6px;
@@ -800,9 +790,6 @@ h4 small {
   border-bottom: 1px solid #eeeeee;
 }
 
-
-
-
 ul.unstyled,
 ol.unstyled {
   margin-left: 0;
@@ -1001,6 +988,54 @@ pre code {
   overflow-y: scroll;
 }
 
+form {
+  margin: 0 0 20px;
+}
+
+fieldset {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+legend {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 20px;
+  font-size: 21px;
+  line-height: 40px;
+  color: #333333;
+  border: 0;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+legend small {
+  font-size: 15px;
+  color: #999999;
+}
+
+label,
+input,
+button,
+select,
+textarea {
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 20px;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
 
 select,
 textarea,
@@ -1032,7 +1067,8 @@ input[type="color"],
           border-radius: 4px;
 }
 
-
+input,
+textarea,
 .uneditable-input {
   width: 206px;
 }
@@ -1087,7 +1123,7 @@ input[type="color"]:focus,
   border-color: rgba(82, 168, 236, 0.8);
   outline: 0;
   outline: thin dotted \9;
-   IE6-9
+  /* IE6-9 */
 
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
@@ -1115,10 +1151,10 @@ input[type="checkbox"] {
 select,
 input[type="file"] {
   height: 30px;
-   In IE7, the height of the select element cannot be changed by height, only font-size
+  /* In IE7, the height of the select element cannot be changed by height, only font-size */
 
   *margin-top: 4px;
-   For IE7, add top margin to align select with labels
+  /* For IE7, add top margin to align select with labels */
 
   line-height: 30px;
 }
@@ -1755,7 +1791,7 @@ input.search-query {
   padding-right: 4px \9;
   padding-left: 14px;
   padding-left: 4px \9;
-   IE7-8 doesn't have border-radius, so don't indent the padding
+  /* IE7-8 doesn't have border-radius, so don't indent the padding */
 
   margin-bottom: 0;
   -webkit-border-radius: 15px;
@@ -1763,7 +1799,7 @@ input.search-query {
           border-radius: 15px;
 }
 
- Allow for input prepend/append in search forms
+/* Allow for input prepend/append in search forms */
 
 .form-search .input-append .search-query,
 .form-search .input-prepend .search-query {
@@ -2215,7 +2251,7 @@ table th[class*="span"],
   background-repeat: no-repeat;
 }
 
- White icons with optional class, or on hover/focus/active states of certain elements
+/* White icons with optional class, or on hover/focus/active states of certain elements */
 
 .icon-white,
 .nav-pills > .active > a > [class^="icon-"],
@@ -3758,7 +3794,7 @@ input[type="submit"].btn.btn-mini {
 .btn-group-vertical {
   display: inline-block;
   *display: inline;
-   IE7 inline-block hack
+  /* IE7 inline-block hack */
 
   *zoom: 1;
 }
@@ -4110,7 +4146,7 @@ input[type="submit"].btn.btn-mini {
   border-bottom-color: #005580;
 }
 
- move down carets for tabs
+/* move down carets for tabs */
 
 .nav-tabs .dropdown-toggle .caret {
   margin-top: 8px;
