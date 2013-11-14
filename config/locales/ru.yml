@@ -1,8 +1,11 @@
 ru:
   monday: "Понедельник"
   tuesday: "Вторник"
-  wensday: "Среда"
+  wednesday: "Среда"
   thursday: "Четверг"
   friday: "Пятница"
   saturday: "Суббота"
   sunday: "Воскресенье"
+
+  hall-1: "№1"
+  hall-2: "№2"

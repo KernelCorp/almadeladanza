@@ -12,6 +12,8 @@ Almadeladanza::Application.routes.draw do
 
   resources :interior_images, only: [:index]
 
+  resources :gallery_events, only: [:index]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

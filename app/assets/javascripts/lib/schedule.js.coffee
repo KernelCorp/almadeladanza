@@ -61,7 +61,7 @@ class schedule
       return
 
   bind_day_zoom: ->
-    $('a.day-zoom').click ->
+    $('a.day-zoom').off().off().on 'click', ->
       for_zoom_number = $(this).parent().data('zoom-day')
       if !$('.zoom-day-'+for_zoom_number).hasClass('large')
         $('.large').removeClass('large')
@@ -81,7 +81,7 @@ class schedule
         $('.sc-day-'+for_zoom_number).next().removeClass('small')
         $('.zoom-day-'+for_zoom_number).prev().removeClass('small')
         $('.zoom-day-'+for_zoom_number).next().removeClass('small')
-      return
+    return false
   show_popover: (owner)->
     if owner.hasClass 'open'
       owner.removeClass 'open'
