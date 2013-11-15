@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-coaches = Coach.all
-held = []
-coaches.each do |coach|
+
+styles = DanceStyle.all
+styles.each do |style|
   hash = {}
   loop do
     hash =  {
@@ -18,10 +18,9 @@ coaches.each do |coach|
     }
     Lesson.where(hash).empty? ? break : next
   end
-  Lesson.create! coach_id:       coach.id,
-                 dance_style_id: coach.dance_styles.first.id,
+  Lesson.create! coach_id:       style.coaches.first.id,
+                 dance_style_id: style.id,
                  hall_id:        hash[:hall_id],
                  day:            hash[:day],
                  time:           hash[:time]
-
 end
