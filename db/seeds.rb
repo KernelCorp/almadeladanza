@@ -5,3 +5,28 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+coaches = Coach.all
+held = []
+coaches.each do |coach|
+  hash = {}
+  loop do
+    hash =  {
+        day: rand(7),
+        time: rand(8),
+        hall: (rand(1) == 0)? Hall.last : Hall.first
+    }
+    if held.include? hash
+      next
+    else
+      held << hash
+      break
+    end
+  end
+  Lesson.create! coach_id:       coach.id,
+                 dance_style_id: coach.dance_styles.first.id,
+                 hall_id:        hash[:hall].id,
+                 day:            hash[:day],
+                 time:           hash[:time]
+
+end
