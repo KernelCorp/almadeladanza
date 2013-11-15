@@ -14,7 +14,7 @@ coaches.each do |coach|
     hash =  {
         day: rand(7),
         time: rand(8),
-        hall: (rand(1) == 0)? Hall.last : Hall.first
+        hall: (rand(2) == 0)? Hall.last : Hall.first
     }
     Lesson.where(hash).empty? ? next : break
   end
