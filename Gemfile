@@ -14,6 +14,7 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'paperclip'
 gem 'bxslider-rails'
+gem 'russian'
 
 # Gems used only for assets and not required
 # in production environments by default.
