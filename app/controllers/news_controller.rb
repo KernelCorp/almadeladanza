@@ -7,7 +7,8 @@ class NewsController < ApplicationController
 
   def show
     @news = News.all
-    render
+    @one = News.find params[:id]
+    render layout: 'news_about'
   end
 
 
