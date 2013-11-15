@@ -1,0 +1,13 @@
+.images-list.gallery-events
+  - i = 0
+  - @gallery_events.each do |event|
+    - event.images.each do |image|
+      .image-wrapper
+        %a.gallery-image{'data-image-num'=> i, 'data-image-large' => image.path.url(:large)}
+          %img{src: image.path.url(:small)}
+      - i = i + 1
+  - (0..20).each do |i|
+    .image-wrapper
+      %a.gallery-image{'data-image-num'=> i, 'data-image-large' => "http://placekitten.com/500/320"}
+        %img{src: "http://placekitten.com/150/115"}
+  .shadow

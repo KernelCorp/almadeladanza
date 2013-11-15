@@ -1,0 +1,17 @@
+#tabs1.gallery.ui-tabs-vertical
+  %ul.ui-tabs-nav
+    %li
+      %a.ui-tabs-anchor{href: "#fragment-1"}
+        %span.ui-style-name{id: '', "data-lesson-id" => ''}
+          Все фотографии
+    - i = 0
+    - @gallery_events.each do |event|
+      - i = i + 1
+      %li
+        %a.ui-tabs-anchor{href: "#fragment-1"}
+          %span.ui-style-name{id: 'style-'+event.id.to_s, "data-lesson-id" => event.id.to_s}
+            %sup
+              = event.date
+            = event.title
+  %div.ui-tabs-panel#fragment-1.ui-widget-content
+    = render partial: 'gallery'
