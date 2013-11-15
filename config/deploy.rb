@@ -51,6 +51,6 @@ namespace :deploy do
   end
 
   task :init_vhost do
-    run "ln -s #{deploy_to}/current/config/vote.vhost /etc/nginx/sites-enabled/#{application}"
+    run "ln -s #{deploy_to}/current/config/#{application}.vhost /etc/nginx/sites-enabled/#{application}"
   end
 end
