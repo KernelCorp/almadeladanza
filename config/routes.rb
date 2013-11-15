@@ -16,6 +16,10 @@ Almadeladanza::Application.routes.draw do
 
   resources :gallery_events, only: [:index]
 
+  resources :about, only: [:index]
+
+  resources :contacts, only: [:index]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
