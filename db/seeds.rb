@@ -14,13 +14,13 @@ coaches.each do |coach|
     hash =  {
         day: rand(7),
         time: rand(8),
-        hall: (rand(2) == 0)? Hall.last : Hall.first
+        hall_id: (rand(2) == 0)? Hall.last.id : Hall.first.id
     }
-    Lesson.where(hash).empty? ? next : break
+    Lesson.where(hash).empty? ? break : next
   end
   Lesson.create! coach_id:       coach.id,
                  dance_style_id: coach.dance_styles.first.id,
-                 hall_id:        hash[:hall].id,
+                 hall_id:        hash[:hall_id].id,
                  day:            hash[:day],
                  time:           hash[:time]
 
