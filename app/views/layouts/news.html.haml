@@ -9,11 +9,15 @@
   = csrf_meta_tags
 
 %body
-  #document
-    #wrapper-background
-      #wrapper-media
+  #homepage
+    = yield :gradient
+    #menu_bg_1
+    #menu_bg_2
+    #menu_background
+      #menu_container
         = render :partial => 'menu/menu'
-        .content
-          = yield
+
+    #wrapper-media
+      = yield
   #footer_spacer
     = render :partial => '/footer'

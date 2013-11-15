@@ -15,6 +15,7 @@ body, html
 #document
   position: relative
   min-height: 100%
+  margin-bottom: -31px
   &:after
     display: block
     content: ""
@@ -23,17 +24,13 @@ body, html
   margin: 0 auto
   width: 960px
 
-#wrapper-background
-  margin: 0 auto
-  width: 1280px
-  background-image: url(/images/home_background.png)
-
 .content
   position: relative
   margin: 0 auto
   width: 960px
   display: table
   min-height: 640px
+  margin-top: 30px
 
 .gradient
   position: absolute
@@ -43,4 +40,36 @@ body, html
   top: 153px
   width: 100%
 
+#homepage
+  position: relative
+  &:after
+    display: block
+    content: ""
+  margin: 0 auto
+  width: 1280px
+  height: 100%
+  background-image: url(/images/home_background.png)
+  background-size: cover
+  min-height: 790px
+  margin-bottom: -31px
 
+#menu_background
+  height: 150px
+
+#menu_bg_1
+  position: absolute
+  float: left
+  width: 160px
+  height: 150px
+  background-color: rgba(244, 236, 225, 0.85)
+
+#menu_bg_2
+  position: absolute
+  left: 420px
+  width: 860px
+  height: 150px
+  background-color: rgba(244, 236, 225, 0.85)
+
+#menu_container
+  margin: 0 auto
+  width: 960px
