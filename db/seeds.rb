@@ -16,12 +16,7 @@ coaches.each do |coach|
         time: rand(8),
         hall: (rand(1) == 0)? Hall.last : Hall.first
     }
-    if held.include? hash
-      next
-    else
-      held << hash
-      break
-    end
+    Lesson.where(hash).empty? ? next : break
   end
   Lesson.create! coach_id:       coach.id,
                  dance_style_id: coach.dance_styles.first.id,
