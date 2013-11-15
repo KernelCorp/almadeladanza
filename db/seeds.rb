@@ -20,7 +20,7 @@ coaches.each do |coach|
   end
   Lesson.create! coach_id:       coach.id,
                  dance_style_id: coach.dance_styles.first.id,
-                 hall_id:        hash[:hall_id].id,
+                 hall_id:        hash[:hall_id],
                  day:            hash[:day],
                  time:           hash[:time]
 
