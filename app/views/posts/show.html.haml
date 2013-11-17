@@ -1,0 +1,11 @@
+- content_for :gradient do
+  .gradient
+.post-block.one-post
+  .left-block
+    .coach-block
+      %img{src: @post.coach.avatar(:blog)}
+      = @post.coach.name
+  .right-block.scrollable
+    %h1
+      = @post.title
+    = raw @post.body

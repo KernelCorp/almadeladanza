@@ -52,6 +52,8 @@ group :test do
   gem 'selenium-webdriver'
 end
 
+gem 'tinymce-rails', '3.5.8'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

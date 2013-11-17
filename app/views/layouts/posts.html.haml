@@ -1,0 +1,21 @@
+!!!
+%html
+%head
+  %meta{:charset => "utf-8"}
+  %title Alma de la Danza
+
+  = stylesheet_link_tag    "application", :media => "all", "data-turbolinks-track" => ""
+  = javascript_include_tag "application"
+  = csrf_meta_tags
+
+%body
+  #na_page_container
+    =yield :gradient
+    #na_menu_container
+      #na_menu
+        = render partial: 'menu/menu'
+    #na_content.scrollable_container
+      #na_content_wrapper
+        = yield
+
+  = render partial: '/footer'

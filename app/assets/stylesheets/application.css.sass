@@ -3,7 +3,7 @@
 
 @import "partials/*"
 @import "lib/*"
-
+@import "lib/posts"
 
 body
   background-color: #f4ece1
@@ -15,18 +15,10 @@ body, html
 #document
   position: relative
   min-height: 100%
-  &:after
-    display: block
-    content: ""
 
 #wrapper-media
   margin: 0 auto
   width: 960px
-
-#wrapper-background
-  margin: 0 auto
-  width: 1280px
-  background-image: url(/images/home_background.png)
 
 .content
   position: relative
@@ -34,13 +26,42 @@ body, html
   width: 960px
   display: table
   min-height: 640px
+  margin-top: 30px
 
 .gradient
   position: absolute
   background: #dc6d48 //for old browsers
   background: linear-gradient(to right, #dc6d48, #5d2e49)
   padding: 10px 0
-  top: 153px
+  top: 150px
   width: 100%
 
+#homepage
+  position: relative
+  margin: 0 auto
+  width: 1280px
+  height: 100%
+  background-image: url(/images/home_background.png)
+  background-size: cover
+  min-height: 790px
 
+#menu_background
+  height: 150px
+
+#menu_bg_1
+  position: absolute
+  float: left
+  width: 160px
+  height: 150px
+  background-color: rgba(244, 236, 225, 0.85)
+
+#menu_bg_2
+  position: absolute
+  left: 420px
+  width: 860px
+  height: 150px
+  background-color: rgba(244, 236, 225, 0.85)
+
+#menu_container
+  margin: 0 auto
+  width: 960px

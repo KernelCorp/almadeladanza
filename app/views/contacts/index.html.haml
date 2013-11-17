@@ -1,0 +1,13 @@
+.contacts-info
+  %p
+    Запись по телефону
+    %br
+    = @contacts.phone
+  %p
+    %span.underline
+      = @contacts.email
+  %p
+    = @contacts.address
+  %img{src: '/system/images/contacts_photo.png'}
+.contacts-map
+  #map

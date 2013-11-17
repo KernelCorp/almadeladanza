@@ -13,7 +13,7 @@ ActiveAdmin.register Image do
 
 
   controller do
-    before_filter  :parse_raw_upload, :only => [:add_files]
+
 
     private
     def parse_raw_upload
