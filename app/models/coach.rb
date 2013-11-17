@@ -3,6 +3,7 @@ class Coach < User
 
   has_attached_file :avatar,
                     :styles => {
+                        :blog => ["120x120#", :png],
                         :small => ["150x150#", :png],
                         :thumb => ["50x50#", :png]
                     },
@@ -11,5 +12,6 @@ class Coach < User
 
   has_many :lessons
   has_and_belongs_to_many :dance_styles
+  has_many :posts
 
 end

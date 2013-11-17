@@ -20,6 +20,8 @@ Almadeladanza::Application.routes.draw do
 
   resources :contacts, only: [:index]
 
+  resources :posts, only: [:index, :show]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
