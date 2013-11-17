@@ -6,6 +6,12 @@ ActiveAdmin.register Post do
       @search = scope.metasearch(clean_search_params(params[:q]))
       render
     end
+
+    def create
+      @coach = current_user
+      @post = @coach.posts.create! params[:post]
+      redirect_to admin_post_path(@post)
+    end
   end
 
   index do

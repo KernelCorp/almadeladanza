@@ -3,7 +3,6 @@ $ ->
     height = parseInt $('#na_page_container').css('height')
     $('.scrollable_container').css('height',height - 201)
     $('.scrollable').css('height',height - 201)
-    console.log '!!!!'
   ready = ->
     resize()
     $(window).resize resize

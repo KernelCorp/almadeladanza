@@ -5,7 +5,7 @@
     .coach-block
       %img{src: @post.coach.avatar(:blog)}
       = @post.coach.name
-  .right-block
+  .right-block.scrollable
     %h1
       = @post.title
-      = raw @post.body
+    = raw @post.body

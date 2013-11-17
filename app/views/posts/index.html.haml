@@ -1,15 +1,16 @@
 - content_for :gradient do
   .gradient
-- @posts.each do |post|
-  .post-block
-    .left-block
-      .coach-block
-        %img{src: post.coach.avatar(:blog)}
-        = post.coach.name
-    .right-block
-      %h1
-        = post.title
-      %p
-        = post.preview
-      %a{href: post_path(post) }
-        Читать дальше
+.blog-wrapper.scrollable
+  - @posts.each do |post|
+    .post-block
+      .left-block
+        .coach-block
+          %img{src: post.coach.avatar(:blog)}
+          = post.coach.name
+      .right-block
+        %h1
+          = post.title
+        %p
+          = post.preview
+        %a{href: post_path(post) }
+          Читать дальше
