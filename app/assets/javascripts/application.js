@@ -14,6 +14,4 @@
 //= require jquery_ujs
 //= require bxslider
 //= require jquery.ui.tabs
-//= require jquery.turbolinks
-//= require turbolinks
 //= require_tree ./lib/
