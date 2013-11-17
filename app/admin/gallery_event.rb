@@ -1,9 +1,8 @@
-ActiveAdmin.register Image do
+ActiveAdmin.register GalleryEvent do
 
-  actions :all, except: [:edit]
-
-  collection_action :add_files, method: :post do
-    @image = Image.new(path: @raw_file)
+  member_action :add_files, method: :post do
+    @gallery_event = GalleryEvent.find params[:id]
+    @image = @gallery_event.images.new(path: @raw_file)
     if @image.save!
       render json: { success: true, :url => @image.path.url(:thumb), :id => @image.id }
     else
@@ -11,10 +10,8 @@ ActiveAdmin.register Image do
     end
   end
 
-
   controller do
-
-
+    before_filter  :parse_raw_upload, :only => [:add_files]
     private
     def parse_raw_upload
       if env['HTTP_X_FILE_UPLOAD'] == 'true'
@@ -29,29 +26,14 @@ ActiveAdmin.register Image do
     end
   end
 
-  form :partial => 'images_new_form'
-
-
-  index do
-    selectable_column
-    column :title do |image|
-      link_to image.path_file_name, admin_image_path(image)
-    end
-
-    column :preview do |image|
-      image_tag image.path.url(:thumb)
-    end
-  end
-
   show do
     attributes_table do
-      row :title do |image|
-        image.path_file_name
-      end
-      row :preview do |image|
-        image_tag image.path.url(:small)
-      end
+      row :title
+      row :date
+      render 'admin/images/new_gallery_images'
     end
   end
+
+
 
 end
