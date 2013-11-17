@@ -14,11 +14,11 @@
     #na_menu_container
       #na_menu
         = render partial: 'menu/menu'
-    #na_content
+    #na_content.scrollable_container
       #na_content_wrapper
         #na_left_panel
           = yield :left_panel
-        #na_right_panel
+        #na_right_panel.scrollable
           = yield :right_panel
 
   = render partial: '/footer'
