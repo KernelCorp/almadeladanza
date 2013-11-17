@@ -11,7 +11,8 @@ ready = ->
       iconImageOffset: [-15, -42]
     })
     myMap.geoObjects.add(myPlacemark)
-  ymaps.ready(init)
+  if $('#map').length > 0
+    ymaps.ready(init)
   return
 $(document).ready ready
 #$(document).on 'page:load', ready
