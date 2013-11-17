@@ -1,0 +1,28 @@
+- content_for :gradient do
+  .gradient
+
+- content_for :left_panel do
+  #about_left_block
+    %p
+      %a{href: '/about'}Философия школы
+    %p
+      %a.active_link{href: '/coaches'}Наши учителя
+    %p
+      %a{href: '/interior_images'}Интерьеры школы
+    %p
+      %a{href: '/feedback'}Отзывы учеников
+
+- content_for :right_panel do
+  #coaches_right_block
+    - @coaches.each do |coach|
+      .coach_pic
+        %img{src: coach.avatar.url(:medium), 'data-image-url' => coach.avatar.url(:original)}
+      .coach_info
+        .coach_name
+          = coach.name
+        .coach_styles
+          - coach.dance_styles.each do |style|
+            = style.name
+            %br
+      .coach_biography
+        = raw coach.biography

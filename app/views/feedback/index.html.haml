@@ -1,0 +1,22 @@
+- content_for :gradient do
+  .gradient
+
+- content_for :left_panel do
+  #about_left_block
+    %p
+      %a{href: '/about'}Философия школы
+    %p
+      %a{href: '/coaches'}Наши учителя
+    %p
+      %a{href: '/interior_images'}Интерьеры школы
+    %p
+      %a.active_link{href: '/feedback'}Отзывы учеников
+
+- content_for :right_panel do
+  #feedback_right_block
+    - @feedback.each do |feedback|
+      .feedback_text
+        = raw feedback.text
+      .feedback_name
+        = feedback.name
+      .feedback_line
