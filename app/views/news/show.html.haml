@@ -1,22 +1,23 @@
--content_for :gradient do
+- content_for :gradient do
   .gradient
 
--content_for :left_panel do
+- content_for :left_panel do
   %p
-    Новости:
+    Новости
   - @news.each do |news|
     #news_block
       #news_time
         = news.created_at.strftime("%m.%d.%Y")
-      #news_title
-        = news.title
-      #news_details
-        %a{href: '/news/' + news.id.to_s}Подробнее
+      - if news.id == @one.id
+        #current_news_title
+          = news.title
+        #current_news_underline
+      - if news.id != @one.id
+        #news_title
+          = news.title
+        #news_details
+          %a{href: '/news/' + news.id.to_s}Подробнее
 
-
--content_for :right_panel do
-  #na_news_image
-    - if !@one.pic.blank?
-      %img{src: 'http://placekitten.com/100/200'}
-      -#= image_tag @one.pic.url(:original)
-  = @one.text
+- content_for :right_panel do
+  #news_text
+    = raw @one.text
