@@ -3,6 +3,7 @@ class Coach < User
 
   has_attached_file :avatar,
                     :styles => {
+                        :medium => ["200x200#", :png],
                         :blog => ["120x120#", :png],
                         :small => ["150x150#", :png],
                         :thumb => ["50x50#", :png]
