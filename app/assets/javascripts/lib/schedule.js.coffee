@@ -117,8 +117,9 @@ class schedule
 
 
 ready = ->
-  new schedule
+  if $('.lessons').length > 0
+    new schedule
   return
 
 $(document).ready(ready)
-$(document).on('page:load', ready)
+#$(document).on('page:load', ready)
