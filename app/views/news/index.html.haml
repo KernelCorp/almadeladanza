@@ -1,26 +1,29 @@
-#citation_container
-  Я не пытаюсь танцевать лучше,
-  %br
-  .citate-right
-    чем кто-либо другой.
-  %br
-  Я пытаюсь танцевать только
-  .citate-right
-    лучше самого себя.
-  %br
-  #author
-    .citate-right
-      Михаил Барышников
+- content_for :gradient do
+  .gradient
 
-#news_container
-  #news_empty_area
-  %p
-    Новости:
-  - @news.each do |news|
-    #news_block
-      #news_time
-        = news.created_at.strftime("%m.%d.%Y")
-      #news_title
-        = news.title
-      #news_details
-        %a{href: '/news/' + news.id.to_s}Подробнее
+-#TODO: Исправить надпись на главной.
+- content_for :citation do
+  #citation_container
+    Я не пытаюсь танцевать лучше,
+    %br
+    .citate-right
+      чем кто-либо другой.
+    %br
+    Я пытаюсь танцевать только
+    .citate-right
+      лучше самого себя.
+    %br
+    #author
+      .citate-right
+        Михаил Барышников
+
+%p
+  Новости
+- @news.each do |news|
+  #news_block
+    #news_time
+      = news.created_at.strftime("%m.%d.%Y")
+    #news_title
+      = news.title
+    #news_details
+      %a{href: '/news/' + news.id.to_s}Подробнее
