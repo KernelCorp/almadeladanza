@@ -25,6 +25,7 @@ class schedule
       format: 'json',
       data: data,
       success: (lessons) =>
+        $('.not-empty').removeClass('not-empty')
         $('.open').popover('hide')
         $('.lesson-container').empty()
         $('.open').removeClass('open')
@@ -35,6 +36,9 @@ class schedule
           $(td_day+td_time+td_hall).empty()
           $(td_day+td_time+td_hall).append('<a data-toggle="popover" class="on-schedule" >'+$('span.ui-style-name#style-'+lesson.dance_style_id).text()+"</a>")
           element = $(td_day+td_time+td_hall+ ' a')
+          element.parent().parent().addClass('not-empty')
+          if element.parent().parent().prev().has('tr td.time').length == 0
+            element.parent().parent().prev().addClass('not-empty')
           @get_popver_html(element, lesson)
     }
 
@@ -61,7 +65,7 @@ class schedule
       return
 
   bind_day_zoom: ->
-    $('a.day-zoom').off().off().on 'click', ->
+    zoom = ->
       for_zoom_number = $(this).parent().data('zoom-day')
       if !$('.zoom-day-'+for_zoom_number).hasClass('large')
         $('.large').removeClass('large')
@@ -81,6 +85,8 @@ class schedule
         $('.sc-day-'+for_zoom_number).next().removeClass('small')
         $('.zoom-day-'+for_zoom_number).prev().removeClass('small')
         $('.zoom-day-'+for_zoom_number).next().removeClass('small')
+    $('a.day-zoom').hover zoom
+    $('a.day-zoom').click zoom
     return false
   show_popover: (owner)->
     if owner.hasClass 'open'

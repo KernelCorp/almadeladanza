@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require bxslider
+//= require fancybox
 //= require jquery.ui.tabs
 //= require_tree ./lib/

@@ -6,11 +6,12 @@ ready = ->
       zoom: 16
     }
     myPlacemark = new ymaps.Placemark([55.032056, 82.903490], {} ,{
-      iconImageHref: 'http://lorempixel.com/30/42/cats'
-      iconImageSize: [30, 42],
-      iconImageOffset: [-15, -42]
+      iconImageHref: '/system/images/map_point.png'
+      iconImageSize: [60, 84],
+      iconImageOffset: [-40, -100]
     })
     myMap.geoObjects.add(myPlacemark)
+    myMap.controls.add('zoomControl');
   if $('#map').length > 0
     ymaps.ready(init)
   return
