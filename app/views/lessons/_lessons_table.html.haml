@@ -8,7 +8,7 @@
   - 0.upto(7) do |time|
     %tr
       - if time % 2
-        %td{rowspan: '2'}
+        %td.time{rowspan: '2'}
           = raw style_time Lesson::LessonTime[time]
       - 0.upto(6) do |day|
         %td{class: 'lesson-container hall-1 sc-day-'+day.to_s+' sc-time-'+time.to_s }

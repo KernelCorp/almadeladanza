@@ -31,6 +31,8 @@ end
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 
+gem 'fancybox2-rails', '~> 0.2.4'
+
 
 group :development, :test do
   gem 'cucumber-rails', require: false

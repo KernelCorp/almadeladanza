@@ -1,24 +1,50 @@
+$tranz_time: 0.2s
 #tabs1.lessons
-  .ui-tabs-vertical .ui-tabs-nav
+  .ui-tabs-nav
     width: 170px
+    height: 585px
+  .ui-tabs-panel
+    width: 700px
   table#schedule
+    .not-empty
+      td.time
+        color: #dc6d48
     border-collapse: collapse
     td
+      transition: font-size $tranz_time
+      transition: $tranz_time
       text-align: center
+      a
+        opacity: 1
+        transition: opacity $tranz_time ease-out
       &.large
+        transition: $tranz_time
         a
+          opacity: 1
+          transition: opacity $tranz_time ease-out
+          transition: visibility $tranz_time
+          transition: font-size $tranz_time
           font-size: 16px
       &.small
+        transition: $tranz_time
         a
-          visibility: hidden
+          transition: font-size $tranz_time
+          transition: opacity $tranz_time ease-out
+          opacity: 0
     th
+      transition: $tranz_time
       a
+        transition: font-size $tranz_time
         cursor: pointer
         font:
           size: 16px
           family: PTSansRegular
           weight: normal
         color: #dc6d48
+        display: block
+        height: 100%
+        width: 100%
+        line-height: 40px
         &:hover
           text-decoration: none
       min-width: 80px
@@ -29,20 +55,30 @@
       &:first-child
         box-shadow: none
         background-color: transparent
+      &.small:nth-child(2)
+        min-width: 75px
+      &.small:last-child
+        min-width: 70px
       &.small
+        transition: $tranz_time
         min-width: 60px
-        font-size: 10px
+        a
+          font-size: 10px
+
       &.large
+        transition: $tranz_time
         min-width: 120px
         font-size: 20px
-        &:nth-child(2), &:last-child
-          min-width: 100px
+        &:nth-child(2)
+          min-width: 115px
+        &:last-child
+          min-width: 110px
     td
       border: solid 1px #FFFFFF
       font:
         size: 18px
         family: PTSansRegular
-      color: #dc6d48
+      color: #849191
       box-shadow: -1px 0px 0px #f9f4ed inset
       &:last-child
         border-right: none

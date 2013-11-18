@@ -9,7 +9,7 @@ class GalleryEventsController < ApplicationController
       event.images.each do |image|
         img_hash = {
             src: image.path.url(:small),
-            data_image_large: image.path.url(:large)
+            data_image_large: image.path.url
         }
         json_params.push img_hash
       end
