@@ -10,6 +10,7 @@ ActiveAdmin.register DanceStyle do
     f.inputs "Dance Style Details" do
       f.input :name
       f.input :description
+      f.input :preview, input_html: {maxlength: 70}
       f.input :coaches, as: :check_boxes, collection: Coach.all
     end
     f.actions

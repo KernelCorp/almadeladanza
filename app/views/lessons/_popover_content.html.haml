@@ -2,7 +2,7 @@
   = link_to @lesson.dance_style.name, dance_styles_path
 .popover-body
   .description
-    = @lesson.dance_style.description
+    = @lesson.dance_style.preview
   .lesson-info
     %span.key
       день:
@@ -23,5 +23,15 @@
   .button-wrap
     %button.sign
       Записаться
+  %form.inputs
+    .input-wrap
+      %input#name{type: 'text', placeholder: 'Ваше имя'}
+    .input-wrap
+      %input#phone{type: 'text', placeholder: 'Ваш контактный телефон'}
+    .button-wrap
+      %button.submit
+        Отправить заявку
+  .close-popover
+    %a.close-button
 
 

@@ -97,6 +97,18 @@ class schedule
     $('.shadow').click ->
       $('.open').popover('hide')
       $(this).hide()
+    $('.close-button').click ->
+      $('.open').popover('hide')
+      return
+    $('.button-wrap .sign').click ->
+      $(this).hide()
+      $('form.inputs').show()
+      $('.inputs').submit ->
+        if $('#name').val() != '' && $('#phone').val() != ''
+          $('.popover-body, .popover-head').hide()
+          $('.confirm').show()
+        return
+      return
     return
   hide_popover: (owner)->
     owner.removeClass 'open'
