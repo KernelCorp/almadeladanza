@@ -48,13 +48,13 @@
 
 .jspTrack
 {
-    background: #dde;
+    background: #f0e8dd;
     position: relative;
 }
 
 .jspDrag
 {
-    background: #bbd;
+    background: url(/images/drag.png);
     position: relative;
     top: 0;
     left: 0;
