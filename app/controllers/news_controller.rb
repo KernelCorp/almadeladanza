@@ -2,7 +2,7 @@ class NewsController < ApplicationController
 
   def index
     @news = News.all
-    render
+    render layout: 'main'
   end
 
   def show
