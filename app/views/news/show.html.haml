@@ -5,13 +5,14 @@
   %p
     Новости
   - @news.each do |news|
-    #news_block
+    - block_class = ''
+    - block_class = 'with_borders' if (news.id == @one.id)
+    #news_block{class: block_class}
       #news_time
         = news.created_at.strftime("%m.%d.%Y")
       - if news.id == @one.id
         #current_news_title
           = news.title
-        #current_news_underline
       - if news.id != @one.id
         #news_title
           = news.title

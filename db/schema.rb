@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(:version => 20131119102901) do
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.integer  "gallery_event_id"
+    t.string   "type"
   end
 
   create_table "lessons", :force => true do |t|

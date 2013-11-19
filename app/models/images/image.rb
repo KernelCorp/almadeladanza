@@ -1,6 +1,6 @@
 class Image < ActiveRecord::Base
 
-  attr_accessible :path
+  attr_accessible :path, :type
 
   has_attached_file :path,
                     :styles => {
