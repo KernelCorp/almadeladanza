@@ -1,6 +1,6 @@
 window.tinymce_body_init = function(){
 tinyMCE.init({
-  selector: "textarea#post_body, textarea#dance_style_description, textarea#coach_biography, textarea#feedback_text, ",
+  selector: "textarea#post_body, textarea#dance_style_description", //, textarea#coach_biography, textarea#feedback_text, textarea#news_text, textarea#post_body
   theme: "advanced",
   height: "500px",
   maxlength: 100,
