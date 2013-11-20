@@ -6,7 +6,7 @@ ready = ->
       zoom: 16
     }
     myPlacemark = new ymaps.Placemark([55.032056, 82.903490], {} ,{
-      iconImageHref: '/system/images/map_point.png'
+      iconImageHref: '/images/map_point.png'
       iconImageSize: [60, 84],
       iconImageOffset: [-40, -100]
     })
