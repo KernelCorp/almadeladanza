@@ -4,6 +4,6 @@ ActiveAdmin.register Lesson do
 
   end
 
-  form partial: 'lessons/lessons_table'
+  form partial: 'lessons_form'
 
 end

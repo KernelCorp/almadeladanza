@@ -1,25 +1,12 @@
 #= require turbolinks.js
-class schedule
+class window.schedule
   constructor: ->
+    @get_popver_callbacks()
     @load_lessons(null)
     @bind_filters_on_styles()
     @bind_day_zoom()
   zoom_target: ''
   load_lessons: (data)->
-    window.tmp_show = null
-    window.tmp_hide = null
-    tmp_show = $.fn.popover.Constructor.prototype.show
-    tmp_hide = $.fn.popover.Constructor.prototype.hide
-    $.fn.popover.Constructor.prototype.show = ->
-      tmp_show.call(this)
-      if (this.options.onshow)
-        this.options.onshow(this.$element)
-      return
-    $.fn.popover.Constructor.prototype.hide = ->
-      tmp_hide.call(this)
-      if (this.options.onhide)
-        this.options.onhide(this.$element)
-      return
     $.ajax {
       type: 'get',
       url: '/lessons.json',
@@ -46,11 +33,26 @@ class schedule
   get_popver_html: (element, lesson) ->
     $.ajax {
       type: 'get'
-      url: 'lessons/'+lesson.id
+      url: '/lessons/'+lesson.id
       success: (response)=>
         @bind_popver(response, element)
     }
     return
+  get_popver_callbacks: ->
+    window.tmp_show = null
+    window.tmp_hide = null
+    tmp_show = $.fn.popover.Constructor.prototype.show
+    tmp_hide = $.fn.popover.Constructor.prototype.hide
+    $.fn.popover.Constructor.prototype.show = ->
+      tmp_show.call(this)
+      if (this.options.onshow)
+        this.options.onshow(this.$element)
+      return
+    $.fn.popover.Constructor.prototype.hide = ->
+      tmp_hide.call(this)
+      if (this.options.onhide)
+        this.options.onhide(this.$element)
+      return
 
   bind_filters_on_styles: ()->
 

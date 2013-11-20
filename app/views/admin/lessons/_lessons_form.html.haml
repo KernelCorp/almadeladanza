@@ -1,0 +1,6 @@
+.lessons-form-wrapper
+  - DanceStyle.all.each do |style|
+    %span.ui-style-name{id: 'style-'+style.id.to_s}
+      = style.name
+
+  = render partial: 'lessons/lessons_table'
