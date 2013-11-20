@@ -4,6 +4,7 @@
     min-height: 230px
     max-width: none
     font-family: Mirta
+    position: relative
     .popover-head
       text-align: center
       a
@@ -27,6 +28,7 @@
       text-align: center
       button
         background: linear-gradient(to right, #dc6d48,  #5d2e49)
+        background: -webkit-linear-gradient(left, #dc6d48,  #5d2e49)
         border: none
         color: #f4ece1
         width: 195px
@@ -34,6 +36,24 @@
         margin-top: 15px
         &:hover
           background: linear-gradient(to left top, #dc6d48,  #5d2e49)
+          background: -webkit-linear-gradient(right top, #dc6d48,  #5d2e49)
         &:active
           border: 2px #000000 solid
+    .close-popover
+      position: absolute
+      top: 7px
+      right: 27px
+      a.close-button
+        background: url('/images/close.png') no-repeat
+        width: 36px
+        height: 36px
+        display: inline-block
+        opacity: 1
+        cursor: pointer
+        &:hover
+          opacity: 0.7
+    .inputs
+      display: none
+
+
 

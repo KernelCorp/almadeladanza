@@ -2,12 +2,14 @@
   %p
     Запись по телефону
     %br
-    = @contacts.phone
+    %a{href: 'tel:'+@contacts.phone}
+      = @contacts.phone
   %p
     %span.underline
-      = @contacts.email
+      %a{href: 'mailto:'+@contacts.email}
+        = @contacts.email
   %p
     = @contacts.address
-  %img{src: '/system/images/contacts_photo.png'}
+  %img{src: '/images/contacts_photo.png'}
 .contacts-map
   #map
