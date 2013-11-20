@@ -4,6 +4,7 @@ class schedule
     @load_lessons(null)
     @bind_filters_on_styles()
     @bind_day_zoom()
+  zoom_target: ''
   load_lessons: (data)->
     window.tmp_show = null
     window.tmp_hide = null
@@ -67,6 +68,8 @@ class schedule
   bind_day_zoom: ->
     zoom = ->
       for_zoom_number = $(this).parent().data('zoom-day')
+      if $(this).data('head-class') != undefined
+        for_zoom_number = $(this).data('head-class')
       if !$('.zoom-day-'+for_zoom_number).hasClass('large')
         $('.large').removeClass('large')
         $('.small').removeClass('small')
@@ -85,9 +88,27 @@ class schedule
         $('.sc-day-'+for_zoom_number).next().removeClass('small')
         $('.zoom-day-'+for_zoom_number).prev().removeClass('small')
         $('.zoom-day-'+for_zoom_number).next().removeClass('small')
-    $('a.day-zoom').hover zoom
+        schedule::zoom_target = $(this).data('head-class')
+        return
+
+    day_mouse_enter = ->
+      head_class = $(this).data('head-class') || $(this).parent().data('head-class')
+      if schedule::zoom_target != head_class
+        $('.'+head_class+' a').click()
+      if head_class == undefined
+        $('.large').removeClass('large')
+        $('.small').removeClass('small')
+      schedule::zoom_target = head_class
+      return
     $('a.day-zoom').click zoom
+    $('a.day-zoom').mouseenter day_mouse_enter
+    $('td, th').mouseenter day_mouse_enter
+    $('table#schedule').mouseleave ->
+      $('.large').removeClass('large')
+      $('.small').removeClass('small')
+      return
     return false
+
   show_popover: (owner)->
     if owner.hasClass 'open'
       owner.removeClass 'open'
