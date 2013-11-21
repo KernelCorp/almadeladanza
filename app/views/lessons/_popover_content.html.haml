@@ -23,14 +23,16 @@
   .button-wrap
     %button.sign
       Записаться
-  %form.inputs
+
+  = form_for Client.new, remote: true, html: {class: 'inputs'} do |f|
     .input-wrap
-      %input#name{type: 'text', placeholder: 'Ваше имя'}
+      = f.text_field :name, type: 'text', placeholder: 'Ваше имя'
     .input-wrap
-      %input#phone{type: 'text', placeholder: 'Ваш контактный телефон'}
+      = f.text_field :phone, type: 'text', placeholder: 'Ваш контактный телефон'
+    = hidden_field_tag 'client[lesson_id]', @lesson.id
     .button-wrap
-      %button.submit
-        Отправить заявку
+      = f.submit class: 'submit_button', value: 'Отправить заявку'
+
 .confirm-block
   %p
     Ваша заявка принята
