@@ -5,106 +5,106 @@ $tranz_time: 0.2s
     height: 585px
   .ui-tabs-panel
     width: 700px
-  table#schedule
-    .not-empty
-      td.time
-        color: #dc6d48
-    border-collapse: collapse
-    td
-      transition: font-size $tranz_time
+table#schedule
+  .not-empty
+    td.time
+      color: #dc6d48
+  border-collapse: collapse
+  td
+    transition: font-size $tranz_time
+    transition: $tranz_time
+    text-align: center
+    a
+      opacity: 1
+      transition: opacity $tranz_time ease-out
+    &.large
       transition: $tranz_time
-      text-align: center
       a
         opacity: 1
         transition: opacity $tranz_time ease-out
-      &.large
-        transition: $tranz_time
-        a
-          opacity: 1
-          transition: opacity $tranz_time ease-out
-          transition: visibility $tranz_time
-          transition: font-size $tranz_time
-          font-size: 16px
-      &.small
-        transition: $tranz_time
-        a
-          transition: font-size $tranz_time
-          transition: opacity $tranz_time ease-out
-          opacity: 0
-    th
+        transition: visibility $tranz_time
+        transition: font-size $tranz_time
+        font-size: 16px
+    &.small
       transition: $tranz_time
       a
         transition: font-size $tranz_time
-        cursor: pointer
-        font:
-          size: 16px
-          family: PTSansRegular
-          weight: normal
-        color: #dc6d48
-        display: block
-        height: 100%
-        width: 100%
-        line-height: 40px
-        &:hover
-          text-decoration: none
-      min-width: 80px
-      height: 40px
-      background-color: #fefbf6
-      border-right: solid 1px #f4ece1
-      box-shadow: -1px 0px 0px #faf5ee inset
-      &:first-child
-        box-shadow: none
-        background-color: transparent
-      &.small:nth-child(2)
-        min-width: 75px
-      &.small:last-child
-        min-width: 70px
-      &.small
-        transition: $tranz_time
-        min-width: 60px
-        a
-          font-size: 10px
-
-      &.large
-        transition: $tranz_time
-        min-width: 120px
-        font-size: 20px
-        &:nth-child(2)
-          min-width: 115px
-        &:last-child
-          min-width: 110px
-    td
-      border: solid 1px #FFFFFF
+        transition: opacity $tranz_time ease-out
+        opacity: 0
+  th
+    transition: $tranz_time
+    a
+      transition: font-size $tranz_time
+      cursor: pointer
       font:
-        size: 18px
+        size: 16px
         family: PTSansRegular
-      color: #849191
-      box-shadow: -1px 0px 0px #f9f4ed inset
+        weight: normal
+      color: #dc6d48
+      display: block
+      height: 100%
+      width: 100%
+      line-height: 40px
+      &:hover
+        text-decoration: none
+    min-width: 80px
+    height: 40px
+    background-color: #fefbf6
+    border-right: solid 1px #f4ece1
+    box-shadow: -1px 0px 0px #faf5ee inset
+    &:first-child
+      box-shadow: none
+      background-color: transparent
+    &.small:nth-child(2)
+      min-width: 75px
+    &.small:last-child
+      min-width: 70px
+    &.small
+      transition: $tranz_time
+      min-width: 60px
+      a
+        font-size: 10px
+
+    &.large
+      transition: $tranz_time
+      min-width: 120px
+      font-size: 20px
+      &:nth-child(2)
+        min-width: 115px
       &:last-child
-        border-right: none
-        box-shadow: none
-    .hall-1
-      a
-        font-size: 10px
-        color: #849191
-        cursor: pointer
-    .hall-2
-      a
-        font-size: 10px
-        color: #5d2e49
-        cursor: pointer
-    tr:nth-child(2n+2)
-      td:first-child
-        min-width: 90px
-        height: 25px
-        background-color: #fefbf6
-        border-bottom: solid 1px #f4ece1
-        box-shadow: 0px -1px 0px #faf5ee inset
-      td:nth-child(2)
-        height: 25px
-    tr:nth-child(2n+1)
-      td:first-child
-        height: 25px
+        min-width: 110px
+  td
+    border: solid 1px #FFFFFF
+    font:
+      size: 18px
+      family: PTSansRegular
+    color: #849191
+    box-shadow: -1px 0px 0px #f9f4ed inset
+    &:last-child
+      border-right: none
+      box-shadow: none
+  .hall-1
+    a
+      font-size: 10px
+      color: #849191
+      cursor: pointer
+  .hall-2
+    a
+      font-size: 10px
+      color: #5d2e49
+      cursor: pointer
+  tr:nth-child(2n+1)
+    td:first-child
+      min-width: 90px
+      height: 25px
+      background-color: #fefbf6
+      border-bottom: solid 1px #f4ece1
+      box-shadow: 0px -1px 0px #faf5ee inset
+    td:nth-child(2)
+      height: 25px
+  tr:nth-child(2n+2)
+    td:first-child
+      height: 25px
 .ui-widget-content
   position: relative
   .shadow
@@ -117,23 +117,41 @@ $tranz_time: 0.2s
     left: 0
     top: 0
 
-.halls
-  margin: 13px 0 0 90px
-  border: #ffffff 1px solid
-  width: 98px
-  .first, .second
+table#schedule
+  th.halls
+    margin: 13px 0 0 90px
+    border: #ffffff 1px solid
     width: 98px
-    height: 28px
-    text-align: center
-    font:
-      size: 18px
-      family: Mirta
-    line-height: 33px
-  .first
-    border-bottom: #ffffff 1px dotted
-    color: #849191
-  .second
-    color: #5d2e49
+    height: 20px
+    .first, .second
+      width: 98px
+      height: 15px
+      text-align: center
+      font:
+        size: 14px
+        family: Mirta
+      line-height: 20px
+    .first
+      //border-bottom: #ffffff 1px dotted
+      color: #849191
+    .second
+      color: #5d2e49
+.lessons-form-wrapper
+  background-color: #f4ece1
+  sup
+    vertical-align: super
+  a
+    text-decoration: none
+  table#schedule
+    th.halls
+      height: 15px
+    td
+      a
+        text-align: center
+    td.time
+      vertical-align: middle
+  .ui-style-name
+    display: none
 
 
 

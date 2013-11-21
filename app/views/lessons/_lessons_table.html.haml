@@ -1,22 +1,24 @@
 %table#schedule
   %tr
-    %th
+    %th.halls
+      .first
+        Зал №1
+
     - 0.upto(6) do |day|
-      %th{'data-zoom-day'=>day.to_s, class: 'real zoom-day-'+day.to_s}
+      %th{'data-zoom-day'=>day.to_s, class: 'real zoom-day-'+day.to_s, rowspan: '2', 'data-head-class' => 'zoom-day-'+ day.to_s}
         %a.day-zoom
           = t(Lesson::LessonDay[day])
+  %tr
+    %th.halls
+      .second
+        Зал №2
   - 0.upto(7) do |time|
     %tr
       - if time % 2
         %td.time{rowspan: '2'}
           = raw style_time Lesson::LessonTime[time]
       - 0.upto(6) do |day|
-        %td{class: 'lesson-container hall-1 sc-day-'+day.to_s+' sc-time-'+time.to_s }
+        %td{class: 'lesson-container hall-1 sc-day-'+day.to_s+' sc-time-'+time.to_s, 'data-head-class' => 'zoom-day-'+ day.to_s }
     %tr
       - 0.upto(6) do |day|
-        %td{class: 'lesson-container hall-2 sc-day-'+day.to_s+' sc-time-'+time.to_s }
-.halls
-  .first
-    Зал №1
-  .second
-    Зал №2
+        %td{class: 'lesson-container hall-2 sc-day-'+day.to_s+' sc-time-'+time.to_s, 'data-head-class' => 'zoom-day-'+ day.to_s }
