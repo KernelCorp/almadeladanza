@@ -1,6 +1,31 @@
-.lessons-form-wrapper
-  - DanceStyle.all.each do |style|
-    %span.ui-style-name{id: 'style-'+style.id.to_s}
-      = style.name
+%form
+  %fieldset.inputs
+    %ol
+      %li
+        %label
+          Стиль танца
+        %select#dance_style
+          %option
+          - DanceStyle.all.each do |style|
+            %option{value: style.id.to_s}
+              = style.name
+      %li
+        %label
+          Тренер
+        %select#coach
+  .lessons-form-wrapper
+    .additional-info
+      - DanceStyle.all.each do |style|
+        %span.ui-style-name{id: 'style-'+style.id.to_s}
+          = style.name
+      - Coach.all.each do |coach|
+        %span.ui-coach-name{id: 'coach-'+coach.id.to_s}
+          = coach.name
+      - 0.upto(7) do |i|
+        %span.ui-time{id: 'time-'+i.to_s}
+          = Lesson::LessonTime[i]
+      - 0.upto(6) do |i|
+        %span.ui-day{id: 'day-'+i.to_s}
+          = t(Lesson::LessonDay[i])
 
-  = render partial: 'lessons/lessons_table'
+    = render partial: 'lessons/lessons_table'

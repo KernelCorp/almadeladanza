@@ -18,7 +18,9 @@
         %td.time{rowspan: '2'}
           = raw style_time Lesson::LessonTime[time]
       - 0.upto(6) do |day|
-        %td{class: 'lesson-container hall-1 sc-day-'+day.to_s+' sc-time-'+time.to_s, 'data-head-class' => 'zoom-day-'+ day.to_s }
+        %td{class: 'lesson-container hall-1 sc-day-'+day.to_s+' sc-time-'+time.to_s, 'data-head-class' => 'zoom-day-'+ day.to_s,
+        'data-day' => day, 'data-time' => time, 'data-hall' => '1' }
     %tr
       - 0.upto(6) do |day|
-        %td{class: 'lesson-container hall-2 sc-day-'+day.to_s+' sc-time-'+time.to_s, 'data-head-class' => 'zoom-day-'+ day.to_s }
+        %td{class: 'lesson-container hall-2 sc-day-'+day.to_s+' sc-time-'+time.to_s, 'data-head-class' => 'zoom-day-'+ day.to_s,
+         'data-day' => day, 'data-time' => time, 'data-hall' => '2' }

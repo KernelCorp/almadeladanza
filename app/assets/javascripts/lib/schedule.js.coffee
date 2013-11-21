@@ -1,7 +1,7 @@
 #= require turbolinks.js
 class window.schedule
   constructor: ->
-    @get_popver_callbacks()
+    @get_popover_callbacks()
     @load_lessons(null)
     @bind_filters_on_styles()
     @bind_day_zoom()
@@ -18,27 +18,43 @@ class window.schedule
         $('.lesson-container').empty()
         $('.open').removeClass('open')
         for lesson in lessons
-          td_day = '.sc-day-'+lesson.day
-          td_time = '.sc-time-'+lesson.time
-          td_hall = '.hall-'+lesson.hall_id
-          $(td_day+td_time+td_hall).empty()
-          $(td_day+td_time+td_hall).append('<a data-toggle="popover" class="on-schedule" >'+$('span.ui-style-name#style-'+lesson.dance_style_id).text()+"</a>")
-          element = $(td_day+td_time+td_hall+ ' a')
-          element.parent().parent().addClass('not-empty')
-          if element.parent().parent().prev().has('tr td.time').length == 0
-            element.parent().parent().prev().addClass('not-empty')
-          @get_popver_html(element, lesson)
+          @add_lesson(lesson)
+        @bind_add_delete_lessons()
+
     }
 
-  get_popver_html: (element, lesson) ->
+  add_lesson: (lesson)->
+    td_day = '.sc-day-'+lesson.day
+    td_time = '.sc-time-'+lesson.time
+    td_hall = '.hall-'+lesson.hall_id
+    $(td_day+td_time+td_hall).empty()
+    $(td_day+td_time+td_hall).append('<a data-toggle="popover"  class="on-schedule"  data-lesson-id="'+lesson.id+'">'+$('span.ui-style-name#style-'+lesson.dance_style_id).text()+"</a>")
+    element = $(td_day+td_time+td_hall+ ' a')
+    if $('.additional-info').length > 0
+      coach = $('.ui-coach-name#coach-'+lesson.coach_id).text()
+      day =  $('.ui-day#day-'+lesson.day).text()
+      time =  $('.ui-time#time-'+lesson.time).text()
+      title = "Тренер: "+coach+" день: "+day+" время:"+time
+      element.attr('title', title)
+    element.parent().parent().addClass('not-empty')
+    if element.parent().parent().prev().has('tr td.time').length == 0
+      element.parent().parent().prev().addClass('not-empty')
+    @get_popover_html(element, lesson)
+    return
+
+
+  bind_add_delete_lessons: ()->
+    return
+
+  get_popover_html: (element, lesson) ->
     $.ajax {
       type: 'get'
       url: '/lessons/'+lesson.id
       success: (response)=>
-        @bind_popver(response, element)
+        @bind_popover(response, element)
     }
     return
-  get_popver_callbacks: ->
+  get_popover_callbacks: ->
     window.tmp_show = null
     window.tmp_hide = null
     tmp_show = $.fn.popover.Constructor.prototype.show
@@ -141,7 +157,7 @@ class window.schedule
     $('.ui-widget-content .shadow').hide()
     return
 
-  bind_popver: (response, element) =>
+  bind_popover: (response, element) =>
     if element.parent().hasClass('sc-time-0') || element.parent().hasClass('sc-time-1') || element.parent().hasClass('sc-time-2')
       placement = 'bottom'
     else

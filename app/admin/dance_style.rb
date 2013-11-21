@@ -1,5 +1,12 @@
 ActiveAdmin.register DanceStyle do
 
+  collection_action :get_coaches do
+      @style = DanceStyle.find params[:id]
+      @coaches = @style.coaches
+      render json: @coaches
+  end
+
+
   index do
     column :name
     column :description
