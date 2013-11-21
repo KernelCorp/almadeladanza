@@ -149,7 +149,7 @@ class window.schedule
           $('.popover').addClass('small-popover')
           $('.ok').click ->
             $('.open').popover('hide')
-        return false
+        return
       return
     return
   hide_popover: (owner)->
