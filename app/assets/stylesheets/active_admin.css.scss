@@ -16,6 +16,12 @@
 @import "partials/lesson_table";
 @import "partials/fonts";
 
+.additional-info{
+	display: none;
+}
+
+
+
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //

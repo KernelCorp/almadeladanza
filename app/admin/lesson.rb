@@ -1,7 +1,17 @@
 ActiveAdmin.register Lesson do
 
-  controller do
 
+  controller do
+    def destroy
+      @lesson = Lesson.find params[:id]
+      @lesson.destroy
+      head :ok
+    end
+
+    def create
+      @lesson = Lesson.create! params[:lesson]
+      render json: @lesson
+    end
   end
 
   form partial: 'lessons_form'
