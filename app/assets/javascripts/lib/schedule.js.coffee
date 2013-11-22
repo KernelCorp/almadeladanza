@@ -1,11 +1,41 @@
-#= require turbolinks.js
 class window.schedule
   constructor: ->
+    @bind_halls_filter()
     @get_popover_callbacks()
     @load_lessons(null)
     @bind_filters_on_styles()
     @bind_day_zoom()
   zoom_target: ''
+  bind_halls_filter: ->
+    $('.halls .first a').click ->
+      if $(this).hasClass('active')
+        $(this).removeClass('active')
+        $('#schedule').removeClass('filter-first')
+      else
+        $('.active').removeClass('active')
+        $(this).addClass('active')
+        $('#schedule').addClass('active')
+        $('#schedule').removeClass('filter-second')
+        $('#schedule').addClass('filter-first')
+      return
+
+    $('.halls .second a').click ->
+      if $(this).hasClass('active')
+        $(this).removeClass('active')
+        $('#schedule').removeClass('filter-second')
+      else
+        $('.active').removeClass('active')
+        $(this).addClass('active')
+        $('#schedule').addClass('active')
+        $('#schedule').removeClass('filter-first')
+        $('#schedule').addClass('filter-second')
+      return
+
+    return
+
+  bind_add_delete_lessons: ->
+    return
+
   load_lessons: (data)->
     $.ajax {
       type: 'get',
@@ -30,6 +60,7 @@ class window.schedule
     $(td_day+td_time+td_hall).empty()
     $(td_day+td_time+td_hall).append('<a data-toggle="popover"  class="on-schedule"  data-lesson-id="'+lesson.id+'">'+$('span.ui-style-name#style-'+lesson.dance_style_id).text()+"</a>")
     element = $(td_day+td_time+td_hall+ ' a')
+    @bind_delete(element)
     if $('.additional-info').length > 0
       coach = $('.ui-coach-name#coach-'+lesson.coach_id).text()
       day =  $('.ui-day#day-'+lesson.day).text()
@@ -43,7 +74,7 @@ class window.schedule
     return
 
 
-  bind_add_delete_lessons: ()->
+  bind_delete: ()->
     return
 
   get_popover_html: (element, lesson) ->

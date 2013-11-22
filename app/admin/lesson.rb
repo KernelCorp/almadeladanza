@@ -12,6 +12,10 @@ ActiveAdmin.register Lesson do
       @lesson = Lesson.create! params[:lesson]
       render json: @lesson
     end
+
+    def index
+      redirect_to new_admin_lesson_path
+    end
   end
 
   form partial: 'lessons_form'

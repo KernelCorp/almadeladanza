@@ -5,8 +5,10 @@ class adminSchedule extends window.schedule
     super
 
 
-  bind_add_delete_lessons: ->
-    $('a.on-schedule').click ->
+  bind_delete: (element)->
+    if element == null
+      element = $('a.on-schedule')
+    element.click ->
       $.ajax {
         type: 'delete'
         url: '/admin/lessons/'+$(this).data('lesson-id')
@@ -15,7 +17,8 @@ class adminSchedule extends window.schedule
       }
       return false
 
-
+  bind_add_delete_lessons: ->
+    @bind_delete(null)
     $('td.lesson-container').click ->
       if $(this).children('a').length > 0
         $(this).children('a').click()
@@ -59,11 +62,7 @@ class adminSchedule extends window.schedule
         $('#coach').empty()
     return
 
-#  bind_admin_popover: ()->
-#    $('.on-schedule').popover {
-#      trigger: 'click'
-#    }
-#    return
+
   bind_popover: ()->
     return
 
