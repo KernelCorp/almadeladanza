@@ -1,19 +1,50 @@
-- content_for :gradient do
-  .gradient
+-#- content_for :gradient do
+-#  .gradient
+-#
+-#- content_for :left_panel do
+-#  #about_left_block
+-#
+-#- content_for :right_panel do
+-#  #coaches_right_block
+-#    .coach_pic
+-#      %img{src: @coach.avatar.url(:medium), 'data-image-url' => @coach.avatar.url(:original)}
+-#    .coach_info
+-#      .coach_name
+-#        = @coach.name
+-#      .coach_styles
+-#        - @coach.dance_styles.each do |style|
+-#          = style.name
+-#          %br
+-#    .coach_biography
+-#      = raw @coach.biography
 
-- content_for :left_panel do
-  #about_left_block
-
-- content_for :right_panel do
-  #coaches_right_block
-    .coach_pic
-      %img{src: @coach.avatar.url(:medium), 'data-image-url' => @coach.avatar.url(:original)}
-    .coach_info
-      .coach_name
-        = @coach.name
-      .coach_styles
-        - @coach.dance_styles.each do |style|
-          = style.name
-          %br
-    .coach_biography
-      = raw @coach.biography
+%div
+  %img.dance_styles_bg{:src => '/images/dance_styles_background.png'}
+#tabs.ui-tabs-vertical
+  %ul.ui-tabs-nav
+    - i = 0
+    - @coaches.each do |coach|
+      - i = i + 1
+      - (@coach == coach) ? active = 'ui-tabs-active' : active = ''
+      %li{class: active}
+        %a.ui-style-name.ui-tabs-anchor{href: "#fragment-" + i.to_s}
+          %span
+            = coach.name
+  - i = 0
+  - @coaches.each do |coach|
+    - i = i + 1
+    - (@coach == coach) ? active = 'active_tab' : active =  'hidden_tab'
+    %div.ui-widget-content.ui-tabs-panel{id: 'fragment-'+ i.to_s, class: active}
+      #coaches_right_block
+        .coach_pic
+          %img{src: @coach.avatar.url(:medium), 'data-image-url' => @coach.avatar.url(:original)}
+        .coach_info
+          .coach_name
+            = coach.name
+          .coach_styles
+            - coach.dance_styles.each do |style|
+              %a{href: '/dance_styles/' + style.id.to_s}
+                = style.name
+              %br
+        .coach_biography
+          = raw coach.biography

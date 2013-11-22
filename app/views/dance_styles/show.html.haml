@@ -23,5 +23,6 @@
           .coach_avatar
             %img{:src => coach.avatar.url(:small), 'data-image-url' => coach.avatar.url(:original)}
             %span
-              = coach.name
+              %a{href: '/coaches/' + coach.id.to_s}
+                = coach.name
 

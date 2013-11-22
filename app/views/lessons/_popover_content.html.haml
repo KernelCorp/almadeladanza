@@ -1,5 +1,5 @@
 .popover-head
-  = link_to @lesson.dance_style.name, dance_styles_path
+  = link_to @lesson.dance_style.name, '/dance_styles/' + @lesson.dance_style.id.to_s
 .popover-body
   .description
     = @lesson.dance_style.preview
@@ -19,7 +19,7 @@
     %span.key
       занятия ведет:
     - @coach = @lesson.coach
-    = link_to @coach.name, '#'
+    = link_to @coach.name, '/coaches/' + @coach.id.to_s
   .button-wrap
     %button.sign
       Записаться
