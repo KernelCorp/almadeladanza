@@ -30,6 +30,7 @@ class window.schedule
     $(td_day+td_time+td_hall).empty()
     $(td_day+td_time+td_hall).append('<a data-toggle="popover"  class="on-schedule"  data-lesson-id="'+lesson.id+'">'+$('span.ui-style-name#style-'+lesson.dance_style_id).text()+"</a>")
     element = $(td_day+td_time+td_hall+ ' a')
+    @bind_delete(element)
     if $('.additional-info').length > 0
       coach = $('.ui-coach-name#coach-'+lesson.coach_id).text()
       day =  $('.ui-day#day-'+lesson.day).text()
@@ -43,7 +44,7 @@ class window.schedule
     return
 
 
-  bind_add_delete_lessons: ()->
+  bind_delete: ()->
     return
 
   get_popover_html: (element, lesson) ->
