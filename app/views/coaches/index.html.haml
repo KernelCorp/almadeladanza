@@ -21,8 +21,10 @@
         .coach_name
           = coach.name
         .coach_styles
-          - coach.dance_styles.each do |style|
-            = style.name
-            %br
+          %ul
+            - coach.dance_styles.each do |style|
+              %li
+                %a{href: '/dance_styles/' + style.id.to_s}
+                  = style.name
       .coach_biography
         = raw coach.biography
