@@ -1,11 +1,41 @@
-#= require turbolinks.js
 class window.schedule
   constructor: ->
+    @bind_halls_filter()
     @get_popover_callbacks()
     @load_lessons(null)
     @bind_filters_on_styles()
     @bind_day_zoom()
   zoom_target: ''
+  bind_halls_filter: ->
+    $('.halls .first a').click ->
+      if $(this).hasClass('active')
+        $(this).removeClass('active')
+        $('#schedule').removeClass('filter-first')
+      else
+        $('.active').removeClass('active')
+        $(this).addClass('active')
+        $('#schedule').addClass('active')
+        $('#schedule').removeClass('filter-second')
+        $('#schedule').addClass('filter-first')
+      return
+
+    $('.halls .second a').click ->
+      if $(this).hasClass('active')
+        $(this).removeClass('active')
+        $('#schedule').removeClass('filter-second')
+      else
+        $('.active').removeClass('active')
+        $(this).addClass('active')
+        $('#schedule').addClass('active')
+        $('#schedule').removeClass('filter-first')
+        $('#schedule').addClass('filter-second')
+      return
+
+    return
+
+  bind_add_delete_lessons: ->
+    return
+
   load_lessons: (data)->
     $.ajax {
       type: 'get',

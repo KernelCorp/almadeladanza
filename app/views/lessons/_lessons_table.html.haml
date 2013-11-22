@@ -2,8 +2,8 @@
   %tr
     %th.halls
       .first
-        Зал №1
-
+        %a
+          Зал №1
     - 0.upto(6) do |day|
       %th{'data-zoom-day'=>day.to_s, class: 'real zoom-day-'+day.to_s, rowspan: '2', 'data-head-class' => 'zoom-day-'+ day.to_s}
         %a.day-zoom
@@ -11,7 +11,8 @@
   %tr
     %th.halls
       .second
-        Зал №2
+        %a
+          Зал №2
   - 0.upto(7) do |time|
     %tr.lessons-row
       - if time % 2

@@ -6,6 +6,16 @@ $tranz_time: 0.2s
   .ui-tabs-panel
     width: 700px
 table#schedule
+  &.filter-first
+    td.hall-2
+      a
+        display: none
+  &.filter-second
+    td.hall-1
+      a
+        display: none
+
+
   .not-empty
     td.time
       color: #dc6d48
@@ -124,18 +134,23 @@ table#schedule
     width: 98px
     height: 20px
     .first, .second
-      width: 98px
-      height: 15px
-      text-align: center
-      font:
-        size: 14px
-        family: Mirta
-      line-height: 20px
+      a
+        width: 98px
+        height: 15px
+        text-align: center
+        font:
+          size: 14px
+          family: Mirta
+        line-height: 20px
+        &.active
+          color: #dc6d48
     .first
-      //border-bottom: #ffffff 1px dotted
-      color: #849191
+      a
+        //border-bottom: #ffffff 1px dotted
+        color: #849191
     .second
-      color: #5d2e49
+      a
+        color: #5d2e49
 .lessons-form-wrapper
   background-color: #f4ece1
   sup
