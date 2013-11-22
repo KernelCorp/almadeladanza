@@ -32,6 +32,7 @@
     .input-wrap
       = f.text_field :email, type: 'text', placeholder: 'Ваш email'
     = hidden_field_tag 'client[lesson_id]', @lesson.id
+    = f.label 'Заполните все поля, пожалуйста', html: {class: 'validation_message'}
     .button-wrap
       = f.submit class: 'submit_button', value: 'Отправить заявку'
 

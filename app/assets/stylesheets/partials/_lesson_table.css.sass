@@ -5,7 +5,13 @@ $tranz_time: 0.2s
     height: 585px
   .ui-tabs-panel
     width: 700px
+  #message-empty
+    display: none
+  .ui-widget-content.empty
+    #message-empty
+      display: block
 table#schedule
+
   &.filter-first
     td.hall-2
       a
@@ -14,7 +20,10 @@ table#schedule
     td.hall-1
       a
         display: none
-
+  tr.lessons-row
+    display: none
+  tr.not-empty
+    display: table-row
 
   .not-empty
     td.time
@@ -157,6 +166,8 @@ table#schedule
     vertical-align: super
   a
     text-decoration: none
+  #message-empty
+    display: none
   table#schedule
     th.halls
       height: 15px
@@ -164,6 +175,9 @@ table#schedule
       a
         text-align: center
         font-size: 16px
+    tr.lessons-row
+      display: table-row
+
     td.time
       vertical-align: middle
   .ui-style-name

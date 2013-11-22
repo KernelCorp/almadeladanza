@@ -4,6 +4,12 @@ class adminSchedule extends window.schedule
     @show_coaches()
     super
 
+  bind_halls_filter: ->
+    return
+
+  hide_empty_rows: ->
+    return
+
 
   bind_delete: (element)->
     if element == null

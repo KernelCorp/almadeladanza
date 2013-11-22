@@ -15,6 +15,14 @@ ActiveAdmin.register Image do
   controller do
     before_filter :parse_raw_upload, only: [:add_files]
 
+
+    def destroy
+      @image = Image.find(params[:id])
+      @image.delete
+      redirect_to :back
+    end
+
+
     private
     def parse_raw_upload
       if env['HTTP_X_FILE_UPLOAD'] == 'true'
