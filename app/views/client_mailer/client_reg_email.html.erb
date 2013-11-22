@@ -6,8 +6,9 @@
     <body>
         <h1> Поступила новая заявка на запись.</h1>
         <p>
-          Имя: <%= @client.name %>.<br/>
-          Телефон <%= @client.phone %>.<br/>
+          Имя: <%= @client.name %><br/>
+          Телефон: <%= @client.phone %><br/>
+          email: <%= @client.email %><br/>
         </p>
         <p>
           <%= @client.lesson.dance_style.name %><br/>

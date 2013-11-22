@@ -1,0 +1,27 @@
+%div
+  %img.dance_styles_bg{:src => '/images/dance_styles_background.png'}
+#tabs.ui-tabs-vertical
+  %ul.ui-tabs-nav
+    - i = 0
+    - @styles.each do |style|
+      - i = i + 1
+      - (@style == style) ? active = 'ui-tabs-active' : ''
+      %li{class: active}
+        %a.ui-style-name.ui-tabs-anchor{href: "#fragment-" + i.to_s}
+          %span
+            = style.name
+  - i = 0
+  - @styles.each do |style|
+    - i = i + 1
+    - (@style == style) ? active = 'active_tab' : active =  'hidden_tab'
+    %div.ui-widget-content.ui-tabs-panel{id: 'fragment-'+ i.to_s, class: active}
+      %p
+        = raw style.description
+      .style_coaches
+        %p Учителя танцев:
+        - style.coaches.each do |coach|
+          .coach_avatar
+            %img{:src => coach.avatar.url(:small), 'data-image-url' => coach.avatar.url(:original)}
+            %span
+              = coach.name
+

@@ -1,0 +1,19 @@
+- content_for :gradient do
+  .gradient
+
+- content_for :left_panel do
+  #about_left_block
+
+- content_for :right_panel do
+  #coaches_right_block
+    .coach_pic
+      %img{src: @coach.avatar.url(:medium), 'data-image-url' => @coach.avatar.url(:original)}
+    .coach_info
+      .coach_name
+        = @coach.name
+      .coach_styles
+        - @coach.dance_styles.each do |style|
+          = style.name
+          %br
+    .coach_biography
+      = raw @coach.biography

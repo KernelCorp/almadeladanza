@@ -6,7 +6,7 @@ Almadeladanza::Application.routes.draw do
 
   root to: "news#index"
 
-  resources :dance_styles, only: [:index]
+  resources :dance_styles, only: [:index, :show]
 
   resources :lessons, only: [:index, :show]
 
@@ -22,7 +22,7 @@ Almadeladanza::Application.routes.draw do
 
   resources :feedback, only: [:index]
 
-  resources :coaches, only: [:index]
+  resources :coaches, only: [:index, :show]
 
   resources :posts, only: [:index, :show]
 
