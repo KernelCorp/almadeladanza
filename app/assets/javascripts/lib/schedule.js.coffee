@@ -240,8 +240,6 @@ class window.schedule
     return
 #          $('.on-schedule').click @show_popover
 
-
-
 ready = ->
   if $('.lessons').length > 0
     new schedule

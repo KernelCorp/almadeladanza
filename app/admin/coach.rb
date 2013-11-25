@@ -1,5 +1,22 @@
 ActiveAdmin.register Coach do
 
+  controller do
+
+    def update
+      @coach = Coach.find params[:id]
+      if params[:coach][:password].blank? && params[:coach][:password_confirmation].blank?
+        params[:coach].delete :password
+        params[:coach].delete :password_confirmation
+      end
+      if @coach.update_attributes params[:coach]
+        redirect_to action: :show
+      else
+        redirect_to :back, alert: t("passwords_must_be_equal")
+      end
+    end
+
+  end
+
   index do
     column :name
     column :email
