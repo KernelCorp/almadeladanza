@@ -10,6 +10,5 @@ class Image < ActiveRecord::Base
                     :path => ':rails_root/public/system/images/:style/:filename',
                     :url => '/system/images/:style/:filename'
 
-  protected
 
 end

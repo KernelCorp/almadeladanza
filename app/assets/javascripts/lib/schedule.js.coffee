@@ -6,6 +6,7 @@ class window.schedule
     @bind_filters_on_styles()
     @bind_day_zoom()
   zoom_target: ''
+  popover_open: false
 
   hide_empty_rows: ->
     $('.ui-widget-content').removeClass('empty')
@@ -173,15 +174,18 @@ class window.schedule
     $('a.day-zoom').click zoom
     $('a.day-zoom').mouseenter day_mouse_enter
     $('td, th').mouseenter day_mouse_enter
-    $('table#schedule').mouseleave ->
-      $('.large').removeClass('large')
-      $('.small').removeClass('small')
+    $('table#schedule').mouseleave =>
+      if !@popover_open
+        $('.large').removeClass('large')
+        $('.small').removeClass('small')
+        schedule::zoom_target = ''
       return
     return false
 
   show_popover: (owner)->
     if owner.hasClass 'open'
       owner.removeClass 'open'
+    schedule::popover_open = true
     $('.open').popover('hide')
     owner.addClass 'open'
     $('.ui-widget-content .shadow').show()
@@ -195,7 +199,6 @@ class window.schedule
       $(this).hide()
       $('form.inputs').show()
       $('.inputs input').on 'input', ->
-        console.log 'change'
         if $(this).val() != ''
           $(this).removeClass('error')
       $('.inputs').submit ->
@@ -217,6 +220,7 @@ class window.schedule
   hide_popover: (owner)->
     owner.removeClass 'open'
     $('.ui-widget-content .shadow').hide()
+    schedule::popover_open = false
     return
 
   bind_popover: (response, element) =>
