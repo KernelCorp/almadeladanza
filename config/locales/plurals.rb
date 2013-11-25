@@ -1,8 +1,9 @@
 {:ru =>
      { :i18n =>
            { :plural =>
-                 { :keys => [:many, :one, :few, :other],
+                 { :keys => [:zero, :many, :one, :few, :other],
                    :rule => lambda { |n|
+
                      if (n == 1.1)
                        :many
                      else
@@ -17,6 +18,7 @@
                          end
                        end
                      end
+
                    }
                  }
            }
