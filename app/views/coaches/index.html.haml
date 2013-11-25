@@ -19,7 +19,8 @@
         %img{src: coach.avatar.url(:medium), 'data-image-url' => coach.avatar.url(:original)}
       .coach_info
         .coach_name
-          = coach.name
+          %a{href: '/coaches/' + coach.id.to_s}
+            = coach.name
         .coach_styles
           %ul
             - coach.dance_styles.each do |style|
@@ -27,4 +28,3 @@
                 %a{href: '/dance_styles/' + style.id.to_s}
                   = style.name
       .coach_biography
-        = raw coach.biography

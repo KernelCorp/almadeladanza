@@ -37,14 +37,15 @@
     %div.ui-widget-content.ui-tabs-panel{id: 'fragment-'+ i.to_s, class: active}
       #coaches_right_block
         .coach_pic
-          %img{src: @coach.avatar.url(:medium), 'data-image-url' => @coach.avatar.url(:original)}
+          %img{src: coach.avatar.url(:medium), 'data-image-url' => coach.avatar.url(:original)}
         .coach_info
           .coach_name
             = coach.name
           .coach_styles
-            - coach.dance_styles.each do |style|
-              %a{href: '/dance_styles/' + style.id.to_s}
-                = style.name
-              %br
+            %ul
+              - coach.dance_styles.each do |style|
+                %li
+                  %a{href: '/dance_styles/' + style.id.to_s}
+                    = style.name
         .coach_biography
           = raw coach.biography
