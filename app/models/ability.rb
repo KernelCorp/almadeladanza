@@ -12,7 +12,8 @@ class Ability
     end
 
     if user.is_a? Coach
-      can :read, user
+      can [:read, :update], user
+      can :manage, Post
     end
 
     # Define abilities for the passed in user here. For example:
