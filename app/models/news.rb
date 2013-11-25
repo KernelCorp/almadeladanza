@@ -1,5 +1,5 @@
 class News < ActiveRecord::Base
-  attr_accessible :date, :text, :title, :pic
+  attr_accessible :text, :title, :pic
 
   has_attached_file :pic,
                     :styles => {
