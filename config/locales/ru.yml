@@ -12,123 +12,123 @@ ru:
 
   activerecord:
     models:
-     admin_user:
-       zero: "Администраторов"
-       one: "Администратор"
-       few: "Администратора"
-       many: "Администраторы"
-       other: "Администраторов"
-     coach:
-       zero: "Тренеров"
-       one: "Тренер"
-       few: "Тренера"
-       many: "Тренеры"
-       other: "Тренеров"
-     comment:
-       zero: "Комментариев"
-       one: "Комментарий"
-       few: "Комментария"
-       many: "Комментарии"
-       other: "Комментариев"
-     dance_style:
-       zero: "Стилей танца"
-       one: "Стиль танца"
-       few: "Стиля танца"
-       many: "Стили танца"
-       other: "Стилей танца"
-     feedback:
-       zero: "Отзывов"
-       one: "Отзыв"
-       few: "Отзыва"
-       many: "Отзывы"
-       other: "Отзывов"
-     gallery_event:
-       zero: "Галерей"
-       one: "Галерея"
-       few: "Галереи"
-       many: "Галереи"
-       other: "Галерей"
-     image:
-       zero: "Изображений"
-       one: "Изображение"
-       few: "Изображения"
-       many: "Изображения"
-       other: "Изображний"
-     interior_image:
-       zero: "Фотографий интерьера"
-       one: "Фотография интерьера"
-       few: "Фотографии интерьера"
-       many: "Фотографии интерьера"
-       other: "Фотографий интерьера"
-     lesson:
-       zero: "Занятий"
-       one: "Занятие"
-       few: "Занятия"
-       many: "Занятия"
-       other: "Занятий"
-     news:
-       zero: "Новостей"
-       one: "Новость"
-       few: "Новости"
-       many: "Новости"
-       other: "Новостей"
-     post:
-       zero: "Постов"
-       one: "Пост"
-       few: "Поста"
-       many: "Посты"
-       other: "Постов"
+      admin_user:
+        zero: "Администраторов"
+        one: "Администратор"
+        few: "Администратора"
+        many: "Администраторы"
+        other: "Администраторов"
+      coach:
+        zero: "Тренеров"
+        one: "Тренер"
+        few: "Тренера"
+        many: "Тренеры"
+        other: "Тренеров"
+      comment:
+        zero: "Комментариев"
+        one: "Комментарий"
+        few: "Комментария"
+        many: "Комментарии"
+        other: "Комментариев"
+      dance_style:
+        zero: "Стилей танца"
+        one: "Стиль танца"
+        few: "Стиля танца"
+        many: "Стили танца"
+        other: "Стилей танца"
+      feedback:
+        zero: "Отзывов"
+        one: "Отзыв"
+        few: "Отзыва"
+        many: "Отзывы"
+        other: "Отзывов"
+      gallery_event:
+        zero: "Галерей"
+        one: "Галерея"
+        few: "Галереи"
+        many: "Галереи"
+        other: "Галерей"
+      image:
+        zero: "Изображений"
+        one: "Изображение"
+        few: "Изображения"
+        many: "Изображения"
+        other: "Изображний"
+      interior_image:
+        zero: "Фотографий интерьера"
+        one: "Фотография интерьера"
+        few: "Фотографии интерьера"
+        many: "Фотографии интерьера"
+        other: "Фотографий интерьера"
+      lesson:
+        zero: "Занятий"
+        one: "Занятие"
+        few: "Занятия"
+        many: "Занятия"
+        other: "Занятий"
+      news:
+        zero: "Новостей"
+        one: "Новость"
+        few: "Новости"
+        many: "Новости"
+        other: "Новостей"
+      post:
+        zero: "Постов"
+        one: "Пост"
+        few: "Поста"
+        many: "Посты"
+        other: "Постов"
     attributes:
-    admin_user:
-      email: "Email"
-      current_sign_in_at: "Вошел в систему"
-      last_sign_in_at: "Последний раз заходил"
-      sign_in_count: "Сколько раз заходил"
-      password: "Пароль"
-      password_confirmation: "Подтверждение пароля"
-    gallery_event:
-      title: "Название"
-      date: "Дата"
-      created_at: "Создано"
-      updated_at: "Обновлено"
-    image:
-      title: "Название"
-      preview: "Предпрсмотр"
-    news:
-      title: "Заголовок"
-      text: "Текст"
-      pic: "Фото"
-    feedback:
-      name: "Имя"
-      text: "Текст"
-      created_at: "Создан"
-      updated_at: "Обновлен"
-    post:
-      title: "Заголовок"
-      preview: "Предпросмотр"
-      body: "Основной текст"
-      coach: "Автор"
-      coach_id: "Автор"
-    dance_style:
-      name: "Название"
-      preview: "Предпромотр"
-      description: "Описание"
-      created_at: "Создан"
-      updated_at: "Обновлен"
-      coaches: "Тренеры"
-    coach:
-      email: "Email"
-      name: "Имя"
-      biography: "Биография"
-      avatar: "Аватар"
-      current_sign_in_at: "Вошел в систему"
-      last_sign_in_at: "Последний раз заходил"
-      sign_in_count: "Сколько раз заходил"
-      password: "Пароль"
-      password_confirmation: "Подтверждение пароля"
-    interior_image:
-      path: "Предпросмотр"
-      image_view: "Изображение"
+      admin_user:
+        email: "Email"
+        current_sign_in_at: "Вошел в систему"
+        last_sign_in_at: "Последний раз заходил"
+        sign_in_count: "Сколько раз заходил"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+      gallery_event:
+        title: "Название"
+        date: "Дата"
+        created_at: "Создано"
+        updated_at: "Обновлено"
+      image:
+        title: "Название"
+        preview: "Предпрсмотр"
+      news:
+        title: "Заголовок"
+        text: "Текст"
+        pic: "Фото"
+      feedback:
+        name: "Имя"
+        text: "Текст"
+        created_at: "Создан"
+        updated_at: "Обновлен"
+      post:
+        title: "Заголовок"
+        preview: "Предпросмотр"
+        body: "Основной текст"
+        coach: "Автор"
+        coach_id: "Автор"
+      dance_style:
+        name: "Название"
+        preview: "Предпромотр"
+        description: "Описание"
+        created_at: "Создан"
+        updated_at: "Обновлен"
+        coaches: "Тренеры"
+      coach:
+        email: "Email"
+        name: "Имя"
+        biography: "Биография"
+        avatar: "Аватар"
+        current_sign_in_at: "Вошел в систему"
+        last_sign_in_at: "Последний раз заходил"
+        sign_in_count: "Сколько раз заходил"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+      interior_image:
+        path: "Предпросмотр"
+        image_view: "Изображение"
 
   devise:
     failure:
