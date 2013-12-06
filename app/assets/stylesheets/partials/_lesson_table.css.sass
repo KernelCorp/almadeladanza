@@ -29,6 +29,7 @@ table#schedule
   .not-empty
     td.time
       color: #dc6d48
+      background-color: #fefbf6
   border-collapse: collapse
   td
     transition: font-size $tranz_time
@@ -96,7 +97,7 @@ table#schedule
   td
     border: solid 1px #FFFFFF
     font:
-      size: 18px
+      size: 17px
       family: PTSansRegular
     color: #849191
     box-shadow: -1px 0px 0px #f9f4ed inset
@@ -118,6 +119,8 @@ table#schedule
       min-width: 90px
       height: 25px
       background-color: #fefbf6
+  tr:nth-child(2n+2)
+    td:first-child
       border-bottom: solid 1px #f4ece1
       box-shadow: 0px -1px 0px #faf5ee inset
     td:nth-child(2)

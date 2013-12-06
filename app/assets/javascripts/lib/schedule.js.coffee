@@ -13,12 +13,10 @@ class window.schedule
     $('.lessons-row').addClass('not-empty')
     for time_row in $('.time')
       row = $(time_row).parent()
-      if row.find('a.on-schedule:visible').length == 0 &&  row.next().find('a.on-schedule:visible').length == 0
+      if row.find('a.on-schedule:visible').length == 0
         row.removeClass('not-empty')
-        row.next().removeClass('not-empty')
       else
         row.addClass('not-empty')
-        row.next().addClass('not-empty')
     if $('a.on-schedule:visible').length == 0
       $('.ui-widget-content').addClass('empty')
     return
@@ -84,14 +82,14 @@ class window.schedule
     if $('.additional-info').length > 0
       coach = $('.ui-coach-name#coach-'+lesson.coach_id).text()
       day =  $('.ui-day#day-'+lesson.day).text()
-      time =  $('.ui-time#time-'+lesson.time).text()
+      time =  $('.ui-time#hall'+lesson.hall_id+'-time-'+lesson.time).text()
       title = "Тренер: "+coach+" день: "+day+" время:"+time
       element.attr('title', title)
     element.parent().parent().addClass('not-empty')
-    if element.parent().parent().prev().children('.time').length > 0
-      element.parent().parent().prev().addClass('not-empty')
-    if element.parent().parent().children('.time').length > 0
-      element.parent().parent().next().addClass('not-empty')
+#    if element.parent().parent().prev().children('.time').length > 0
+#      element.parent().parent().prev().addClass('not-empty')
+#    if element.parent().parent().children('.time').length > 0
+#      element.parent().parent().next().addClass('not-empty')
     @get_popover_html(element, lesson)
     return
 
