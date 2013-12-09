@@ -54,7 +54,7 @@ group :test do
   gem 'selenium-webdriver'
 end
 
-gem 'tinymce-rails', '3.5.8'
+gem 'tinymce-rails', :git => 'https://github.com/spohlenz/tinymce-rails.git', :branch =>  'tinymce-4'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

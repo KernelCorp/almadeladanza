@@ -21,11 +21,11 @@ ru:
         many: "Администраторы"
         other: "Администраторов"
       coach:
-        zero: "Тренеров"
-        one: "Тренер"
-        few: "Тренера"
-        many: "Тренеры"
-        other: "Тренеров"
+        zero: "Учителей"
+        one: "Учитель"
+        few: "Учителя"
+        many: "Учителя"
+        other: "Учителей"
       comment:
         zero: "Комментариев"
         one: "Комментарий"
@@ -63,11 +63,11 @@ ru:
         many: "Фотографии интерьера"
         other: "Фотографий интерьера"
       lesson:
-        zero: "Занятий"
-        one: "Занятие"
-        few: "Занятия"
-        many: "Занятия"
-        other: "Занятий"
+        zero: "Расписание"
+        one: "Расписание"
+        few: "Расписание"
+        many: "Расписание"
+        other: "Расписание"
       news:
         zero: "Новостей"
         one: "Новость"
@@ -78,7 +78,7 @@ ru:
         zero: "Постов"
         one: "Пост"
         few: "Поста"
-        many: "Посты"
+        many: "Блог"
         other: "Постов"
     attributes:
       admin_user:
@@ -117,7 +117,7 @@ ru:
         description: "Описание"
         created_at: "Создан"
         updated_at: "Обновлен"
-        coaches: "Тренеры"
+        coaches: "Учителя"
       coach:
         email: "Email"
         name: "Имя"
