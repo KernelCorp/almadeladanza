@@ -3,10 +3,10 @@ server unix:/var/www/almadeladanza/shared/unicorn.sock fail_timeout=0;
 }
 
 server {
-  listen 80 default deferred;
+  listen 80;
 
   client_max_body_size 1G;
-  server_name alma.kerweb.ru www.alma.kerweb.ru;
+  server_name almadeladanza.ru www.almadeladanza.ru  almadeladanza.com www.almadeladanza.com;
   keepalive_timeout 5;
   root /var/www/almadeladanza/current/public;
       try_files $uri/index.html $uri.html $uri @myapp;
