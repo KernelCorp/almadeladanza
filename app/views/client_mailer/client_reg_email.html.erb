@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+    </head>
+    <body>
+        <h1> Поступила новая заявка на запись.</h1>
+        <p>
+          Имя: <%= @client.name %><br/>
+          Телефон: <%= @client.phone %><br/>
+          email: <%= @client.email %><br/>
+        </p>
+        <p>
+          <%= @client.lesson.dance_style.name %><br/>
+          <br/>
+          День: <%= t(@client.lesson.day_as_string) %><br/>
+          Время: <%= raw @client.lesson.time_as_string %><br/>
+          Зал: <%= t(@client.lesson.hall.name) %><br/>
+          Учитель: <%= @client.lesson.coach.name %><br/>
+        </p>
+    </body>
+</html>

@@ -1,7 +1,7 @@
 ActiveAdmin.register Post do
   controller do
     def index
-      scope = current_user.posts.scoped
+      scope = current_user.type == 'AdminUser' ? Post.scoped : current_user.posts.scoped
       @collection = scope.page() if params[:q].blank?
       @search = scope.metasearch(clean_search_params(params[:q]))
       render
@@ -17,12 +17,26 @@ ActiveAdmin.register Post do
   index do
     selectable_column
     column :title
-    column :preview
-    column :body do |post|
-      raw post.body
+    column :preview do |post|
+      raw post.preview
     end
+    column :coach
     actions
   end
+
+  show do
+    attributes_table do
+      row :title
+      row :preview do |post|
+        raw post.preview
+      end
+      row :body do |post|
+        raw post.body
+      end
+    end
+  end
+
+
 
   form do |f|
     f.inputs do

@@ -75,14 +75,6 @@ Feature: Schedule
      And I click to button "lessons"
     Then I should see grid for lesson
 
-  Scenario: Admin add lesson
-    Given I sign in as an admin
-    When I go to "admin/lessons"
-     And I click to cell ("Tuesday", 11:30)
-    Then I should see form for lessons
-     And I should see select box for "style"
-     And I should see select box for "coach"
-     And I should see select box for "hall"
 
   Scenario: Admin delete lesson
     Given Style named "yoga" with description "yogaga"

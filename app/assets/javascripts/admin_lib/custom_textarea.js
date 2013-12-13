@@ -1,12 +1,14 @@
 window.tinymce_body_init = function(){
 tinyMCE.init({
-  selector: "textarea#post_body, textarea#dance_style_description",
-  theme: "advanced",
+  selector: "textarea#post_body, textarea#dance_style_description, textarea#coach_biography, textarea#feedback_text, textarea#news_text, textarea#post_body",
   height: "500px",
-  maxlength: 100,
-  toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent",
-  toolbar4: "print preview media | forecolor backcolor emoticons",
-  content_css: '/assets/lib/tinymce_content.css'
+  'width': '76%',
+  plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+        "insertdatetime media table contextmenu paste"
+  ],
+  toolbar: "undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
 });
 };
 

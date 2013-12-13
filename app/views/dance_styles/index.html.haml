@@ -19,13 +19,14 @@
     - i = i + 1
     %div.ui-widget-content.ui-tabs-panel{id: 'fragment-'+ i.to_s}
       %p
-        = style.description
+        = raw style.description
       .style_coaches
         %p Учителя танцев:
         - style.coaches.each do |coach|
           .coach_avatar
             %img{:src => coach.avatar.url(:small), 'data-image-url' => coach.avatar.url(:original)}
             %span
-              = coach.name
+              %a{href: '/coaches/' + coach.id.to_s}
+                = coach.name
 
 

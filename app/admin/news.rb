@@ -6,7 +6,6 @@ ActiveAdmin.register News do
       image_tag news.pic.url(:thumb)
     end
     column :text
-    column :date
     actions
   end
 
@@ -19,7 +18,6 @@ ActiveAdmin.register News do
       row :pic do |news|
         image_tag news.pic.url(:original)
       end
-      row :date
     end
   end
 

@@ -1,4 +1,3 @@
-
 ready = ->
   $('.scrollable').jScrollPane(
     contentWidth: '0px'

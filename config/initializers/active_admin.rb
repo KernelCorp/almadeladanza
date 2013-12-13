@@ -74,6 +74,7 @@ ActiveAdmin.setup do |config|
   # doesn't have access to Dashboard, he'll end up in a redirect loop.
   # Method provided here should be defined in application_controller.rb.
   # config.on_unauthorized_access = :access_denied
+  config.authorization_adapter = ActiveAdmin::CanCanAdapter
 
   # == Current User
   #
@@ -154,7 +155,7 @@ ActiveAdmin.setup do |config|
   # and feel.
   #
   # To load a stylesheet:
-  #   config.register_stylesheet 'my_stylesheet.css'
+  #   config.register_stylesheet 'partials/lesson_table'
   #
   # You can provide an options hash for more control, which is passed along to stylesheet_link_tag():
   #   config.register_stylesheet 'my_print_stylesheet.css', :media => :print

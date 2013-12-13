@@ -23,6 +23,11 @@
   float: right
   width: 660px
 
+.active_tab
+  display: block
+.hidden_tab
+  display: none
+
 .ui-tabs-nav
   font:
     family: Mirta
@@ -46,6 +51,7 @@
     family: PTSansRegular
     size: 18px
   padding-top: 45px
+  margin-bottom: 50px
 
 .dance_styles_bg
   position: absolute
@@ -70,6 +76,12 @@
     font-size: 18px
     width: 325px
 
+    a
+      color: #4a5151
+      text-decoration: none
+      &:hover
+        text-decoration: underline
+
     %img
       display: block
       margin: 0 auto
@@ -80,6 +92,11 @@
       margin-top: 5px
 
 li.ui-tabs-active
-  border: 2px solid #dc6d48
+  border: 1px solid #dc6d48
   border-left: none
   border-right: none
+
+.ui-widget-content
+  #coaches_right_block
+    margin-top: 0
+    margin-left: 10px

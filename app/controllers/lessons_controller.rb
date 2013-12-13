@@ -15,5 +15,4 @@ class LessonsController < ApplicationController
     render :partial => 'popover_content'
   end
 
-
 end

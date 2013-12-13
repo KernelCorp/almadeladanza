@@ -9,7 +9,7 @@
   <% @gallery_event.images.each do |image|-%>
       <tr>
         <td><img src="<%=image.path.url(:thumb)%>"></td>
-        <td><a class='delete-image' href='#'>Удалить</a><input class="image-id" value="<%=image.id%>" style="display:none" ></td>
+        <td><a class='delete-gallery-image' href="/admin/images/<%=image.id%>" data-method="delete">Удалить</a><input class="gallery-image-id" value="<%=image.id%>" style="display:none" ></td>
       </tr>
   <% end -%>
   </tbody>

@@ -1,5 +1,5 @@
 .popover-head
-  = link_to @lesson.dance_style.name, dance_styles_path
+  = link_to @lesson.dance_style.name, '/dance_styles/' + @lesson.dance_style.id.to_s
 .popover-body
   .description
     = @lesson.dance_style.preview
@@ -10,7 +10,7 @@
   .lesson-info
     %span.key
       время:
-    = raw style_time @lesson.time_as_string
+    = raw style_time @lesson.time_as_string(@lesson.hall.name)
   .lesson-info
     %span.key
       зал
@@ -19,19 +19,32 @@
     %span.key
       занятия ведет:
     - @coach = @lesson.coach
-    = link_to @coach.name, '#'
+    = link_to @coach.name, '/coaches/' + @coach.id.to_s
   .button-wrap
     %button.sign
       Записаться
-  %form.inputs
+
+  = form_for Client.new, remote: true, html: {class: 'inputs'} do |f|
     .input-wrap
-      %input#name{type: 'text', placeholder: 'Ваше имя'}
+      = f.text_field :name, type: 'text', placeholder: 'Ваше имя'
     .input-wrap
-      %input#phone{type: 'text', placeholder: 'Ваш контактный телефон'}
+      = f.text_field :phone, type: 'text', placeholder: 'Ваш контактный телефон'
+    .input-wrap
+      = f.text_field :email, type: 'text', placeholder: 'Ваш email'
+    = hidden_field_tag 'client[lesson_id]', @lesson.id
+    = f.label 'Заполните все поля, пожалуйста', html: {class: 'validation_message'}
     .button-wrap
-      %button.submit
-        Отправить заявку
-  .close-popover
-    %a.close-button
+      = f.submit class: 'submit_button', value: 'Отправить заявку'
+
+.confirm-block
+  %p
+    Ваша заявка принята
+  %p
+    В ближайшее время с Вами свяжется администратор школы
+  .button-wrap
+    %button.ok
+      Ок
+.close-popover
+  %a.close-button
 
 

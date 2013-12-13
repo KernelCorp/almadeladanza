@@ -5,4 +5,10 @@ class DanceStylesController < ApplicationController
     render
   end
 
+  def show
+    @style = DanceStyle.find params[:id]
+    @styles = DanceStyle.all
+    render
+  end
+
 end
