@@ -84,7 +84,6 @@ ActiveRecord::Schema.define(:version => 20131120101425) do
     t.string   "path_content_type"
     t.integer  "path_file_size"
     t.datetime "path_updated_at"
-    t.string   "title"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.integer  "gallery_event_id"

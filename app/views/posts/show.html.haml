@@ -6,6 +6,7 @@
       %img{src: @post.coach.avatar(:blog)}
       = @post.coach.name
   .right-block.scrollable
-    %h1
-      = @post.title
-    = raw @post.body
+    .blog_block
+      %h1
+        = @post.title
+      = raw @post.body
