@@ -7,7 +7,9 @@ gem 'rails', '3.2.13'
 
 gem 'mysql2', '0.3.11'
 gem 'haml-rails'
+gem "slim-rails", "~> 2.0.3"
 gem 'activeadmin'
+gem 'activeadmin_tinymce'
 gem 'meta_search', '>= 1.1.0.pre'
 gem 'cancan'
 gem 'turbolinks'
