@@ -1,10 +1,11 @@
 class window.schedule
   constructor: ->
-    @bind_halls_filter()
-    @get_popover_callbacks()
-    @load_lessons(null)
-    @bind_filters_on_styles()
-    @bind_day_zoom()
+    if $('#schedule').length > 0
+      @bind_halls_filter()
+      @get_popover_callbacks()
+      @load_lessons(null)
+      @bind_filters_on_styles()
+      @bind_day_zoom()
   zoom_target: ''
   popover_open: false
 
