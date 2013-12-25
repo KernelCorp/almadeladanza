@@ -17,4 +17,5 @@ ready = ->
   $('.jspDrag').append down_arrow
 
 $(document).ready ready
+$(window).resize ready
 #  $(document).on 'page:load', ready
