@@ -11,7 +11,7 @@
         %a.ui-tabs-anchor{href: "#fragment-1"}
           %span.ui-style-name{id: 'style-'+event.id.to_s, "data-lesson-id" => event.id.to_s}
             %span.date
-              = event.date.strftime("%m.%d.%Y")
+              = event.date.strftime("%d.%m.%Y")
             %span.title
               = event.title
   %div.ui-tabs-panel#fragment-1.ui-widget-content
