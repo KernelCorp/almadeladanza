@@ -41,7 +41,7 @@ ActiveAdmin.register Post do
   form do |f|
     f.inputs do
       f.input :title
-      f.input :preview, input_html: {maxlength: 400}
+      f.input :preview, input_html: {maxlength: 400, 'data-tinymce' => false}
       f.input :body
     end
     f.actions

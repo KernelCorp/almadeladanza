@@ -1,10 +1,11 @@
 class window.schedule
   constructor: ->
-    @bind_halls_filter()
-    @get_popover_callbacks()
-    @load_lessons(null)
-    @bind_filters_on_styles()
-    @bind_day_zoom()
+    if $('#schedule').length > 0
+      @bind_halls_filter()
+      @get_popover_callbacks()
+      @load_lessons(null)
+      @bind_filters_on_styles()
+      @bind_day_zoom()
   zoom_target: ''
   popover_open: false
 
@@ -159,25 +160,7 @@ class window.schedule
         $('.zoom-day-'+for_zoom_number).next().removeClass('small')
         schedule::zoom_target = $(this).data('head-class')
         return
-
-    day_mouse_enter = ->
-      head_class = $(this).data('head-class') || $(this).parent().data('head-class')
-      if schedule::zoom_target != head_class
-        $('.'+head_class+' a').click()
-      if head_class == undefined
-        $('.large').removeClass('large')
-        $('.small').removeClass('small')
-      schedule::zoom_target = head_class
-      return
     $('a.day-zoom').click zoom
-    $('a.day-zoom').mouseenter day_mouse_enter
-    $('td, th').mouseenter day_mouse_enter
-    $('table#schedule').mouseleave =>
-      if !@popover_open
-        $('.large').removeClass('large')
-        $('.small').removeClass('small')
-        schedule::zoom_target = ''
-      return
     return false
 
   show_popover: (owner)->
