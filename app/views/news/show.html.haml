@@ -4,7 +4,7 @@
 - content_for :left_panel do
   %p
     Новости
-  - @news.each do |news|
+  - @news.sort_by{|e| -e[:id]}.each do |news|
     - block_class = ''
     - block_class = 'with_borders' if (news.id == @one.id)
     #news_block{class: block_class}
