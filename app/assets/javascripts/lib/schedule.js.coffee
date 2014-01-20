@@ -75,10 +75,11 @@ class window.schedule
   add_lesson: (lesson)->
     td_day = '.sc-day-'+lesson.day
     td_time = '.sc-time-'+lesson.time
-    td_hall = '.hall-'+lesson.hall_id
-    $(td_day+td_time+td_hall).empty()
-    $(td_day+td_time+td_hall).append('<a data-toggle="popover"  class="on-schedule"  data-lesson-id="'+lesson.id+'">'+$('span.ui-style-name#style-'+lesson.dance_style_id).text()+"</a>")
-    element = $(td_day+td_time+td_hall+ ' a')
+    hall_class = 'hall-'+lesson.hall_id
+#    $(td_day+td_time).empty()
+    $(td_day+td_time).append('<div class="'+hall_class+'" > <a data-toggle="popover"  class="on-schedule"  " +
+     "data-lesson-id="'+lesson.id+'">'+$('span.ui-style-name#style-'+lesson.dance_style_id).text()+"</a></div>")
+    element = $(td_day+td_time+' .'+hall_class+ ' a')
     @bind_delete(element)
     if $('.additional-info').length > 0
       coach = $('.ui-coach-name#coach-'+lesson.coach_id).text()

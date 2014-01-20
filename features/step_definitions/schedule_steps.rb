@@ -54,8 +54,22 @@ Then(/^I should see "(.*?)" in cell \("(.*?)", (\d+):(\d+)\), hall (\d+)$/) do |
       break
     end
   end
-  td_class = '.sc-day-'+week_day_num.to_s+'.sc-time-'+time_num.to_s+'.hall-'+hall_num.to_s
+  td_class = '.sc-day-'+week_day_num.to_s+'.sc-time-'+time_num.to_s+' .hall-'+hall_num.to_s
   page.should have_css(td_class, text: dance_style )
+end
+
+Then(/^I shouldn't see "(.*?)" in cell \("(.*?)", (\d+):(\d+)\)$/) do |dance_style, week_day, start_hour, start_minute, hall_num|
+  week_day_num = Lesson::LessonDay.key week_day.downcase
+  start = start_hour.to_s+'.'+start_minute.to_s
+  time_num = 0
+  Lesson::LessonTime.each do |time|
+    unless time[1].match(/^#{start}/).nil?
+      time_num = time[0]
+      break
+    end
+  end
+  td_class = '.sc-day-'+week_day_num.to_s+'.sc-time-'+time_num.to_s+' .hall-'+hall_num.to_s
+  page.should_not have_css(td_class, text: dance_style )
 end
 
 Then(/^I shouldn't see "(.*?)" in cell \("(.*?)", (\d+):(\d+)\), hall (\d+)$/) do |dance_style, week_day, start_hour, start_minute, hall_num|
@@ -68,13 +82,13 @@ Then(/^I shouldn't see "(.*?)" in cell \("(.*?)", (\d+):(\d+)\), hall (\d+)$/) d
       break
     end
   end
-  td_class = '.sc-day-'+week_day_num.to_s+'.sc-time-'+time_num.to_s+'.hall-'+hall_num.to_s
+  td_class = '.sc-day-'+week_day_num.to_s+'.sc-time-'+time_num.to_s+' .hall-'+hall_num.to_s
   page.should_not have_css(td_class, text: dance_style )
 end
 
 
-Given(/^Style with description  "(.*?)", "(.*?)"$/) do |style_name, style_description|
-  DanceStyle.create! name: style_name, description: style_description
+Given(/^Style with preview  "(.*?)", "(.*?)"$/) do |style_name, style_description|
+  DanceStyle.create! name: style_name, preview: style_description
 end
 
 When(/^I click to lesson "(.*?)" on "(.*?)" at (\d+):(\d+), hall (\d+)$/) do |dance_style, week_day, start_hour, start_minute, hall_num|
@@ -87,7 +101,7 @@ When(/^I click to lesson "(.*?)" on "(.*?)" at (\d+):(\d+), hall (\d+)$/) do |da
       break
     end
   end
-  td_class = '.sc-day-'+week_day_num.to_s+'.sc-time-'+time_num.to_s+'.hall-'+hall_num.to_s
+  td_class = '.sc-day-'+week_day_num.to_s+'.sc-time-'+time_num.to_s+' .hall-'+hall_num.to_s
   find(td_class+ ' a', text: dance_style).click
   sleep(1)
 end
