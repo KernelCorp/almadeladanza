@@ -123,8 +123,11 @@ class window.schedule
       return
 
   bind_filters_on_styles: ()->
-
     $('a.ui-tabs-anchor').click (data)=>
+      if $('.filter-first').length > 0
+        $('.halls .first a').click()
+      if $('.filter-second').length > 0
+        $('.halls .second a').click()
       dance_style_id = $(data.currentTarget).children('span').data('lesson-id')
       if  dance_style_id != ''
         data = {
