@@ -21,12 +21,9 @@
       - Coach.all.each do |coach|
         %span.ui-coach-name{id: 'coach-'+coach.id.to_s}
           = coach.name
-      - 0.upto(11) do |i|
-        %span.ui-time{id: 'hall1-time-'+i.to_s}
-          = Lesson::LessonTimeHall1[i]
-      - 0.upto(11) do |i|
-        %span.ui-time{id: 'hall2-time-'+i.to_s}
-          = Lesson::LessonTimeHall2[i]
+      - 0.upto(23) do |i|
+        %span.ui-time{id: 'time-'+i.to_s}
+          = Lesson::LessonTime[i]
       - 0.upto(6) do |i|
         %span.ui-day{id: 'day-'+i.to_s}
           = t(Lesson::LessonDay[i])

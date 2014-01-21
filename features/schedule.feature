@@ -49,10 +49,10 @@ Feature: Schedule
     When I go to "/lessons"
      And I click to day "Понедельник"
     Then I should see that column "Понедельник" is fatter than other
-     And I shouldn't see "yoga" in cell ("Вторник", 11:30), hall 1
-     And I should see "yoga" in cell ("Воскресенье", 17:30), hall 2
-     But I should see "close dance" in cell ("Понедельник", 11:30), hall 2
-     And I should see "close dance" in cell ("Четверг", 20:30), hall 1
+     And I shouldn't see "yoga" in cell ("Tuesday", 11:30), hall 1
+     And I should see "yoga" in cell ("Sunday", 17:30), hall 2
+     But I should see "close dance" in cell ("Monday", 11:30), hall 2
+     And I should see "close dance" in cell ("Thursday", 20:30), hall 1
 
   @javascript
   Scenario: Click to specific lesson

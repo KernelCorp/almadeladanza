@@ -4,8 +4,6 @@ class adminSchedule extends window.schedule
     @show_coaches()
     super
 
-  bind_halls_filter: ->
-    return
 
   hide_empty_rows: ->
     return
@@ -19,17 +17,19 @@ class adminSchedule extends window.schedule
         type: 'delete'
         url: '/admin/lessons/'+$(this).data('lesson-id')
         success: ()=>
-          $(this).remove()
+          $(this).parent().remove()
       }
       return false
 
   bind_add_delete_lessons: ->
     @bind_delete(null)
     $('td.lesson-container').click ->
-      if $(this).children('a').length > 0
-        $(this).children('a').click()
-      else
-        if $('#dance_style').val() != '' && $('#coach').val() != null
+      if $('#schedule').hasClass('filter-first')
+        hall_id = 1
+      if $('#schedule').hasClass('filter-second')
+        hall_id = 2
+      if $(this).children('.hall-'+hall_id).length == 0
+        if $('#dance_style').val() != '' && $('#coach').val() != null && hall_id != undefined
           $.ajax {
             type: 'post'
             url: '/admin/lessons'
@@ -39,7 +39,7 @@ class adminSchedule extends window.schedule
                 time: $(this).data('time')
                 coach_id: $('#coach').val()
                 dance_style_id: $('#dance_style').val()
-                hall_id: $(this).data('hall')
+                hall_id: hall_id
               }
             }
             success: (resopnse)=>
@@ -77,8 +77,6 @@ class adminSchedule extends window.schedule
   bind_day_zoom: ->
     return
   get_popover_callbacks: ->
-    return
-  get_popver_callbacks: ->
     return
 
 ready =->

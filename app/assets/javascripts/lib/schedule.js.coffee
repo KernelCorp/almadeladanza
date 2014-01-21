@@ -77,14 +77,14 @@ class window.schedule
     td_time = '.sc-time-'+lesson.time
     hall_class = 'hall-'+lesson.hall_id
 #    $(td_day+td_time).empty()
-    $(td_day+td_time).append('<div class="'+hall_class+'" > <a data-toggle="popover"  class="on-schedule"  " +
-     "data-lesson-id="'+lesson.id+'">'+$('span.ui-style-name#style-'+lesson.dance_style_id).text()+"</a></div>")
+    $(td_day+td_time).append('<div class="'+hall_class+'" > <a data-toggle="popover"  class="on-schedule"  ' +
+     'data-lesson-id="'+lesson.id+'">'+$('span.ui-style-name#style-'+lesson.dance_style_id).text()+'</a></div>')
     element = $(td_day+td_time+' .'+hall_class+ ' a')
     @bind_delete(element)
     if $('.additional-info').length > 0
       coach = $('.ui-coach-name#coach-'+lesson.coach_id).text()
       day =  $('.ui-day#day-'+lesson.day).text()
-      time =  $('.ui-time#hall'+lesson.hall_id+'-time-'+lesson.time).text()
+      time =  $('.ui-time#time-'+lesson.time).text()
       title = "Тренер: "+coach+" день: "+day+" время:"+time
       element.attr('title', title)
     element.parent().parent().addClass('not-empty')
