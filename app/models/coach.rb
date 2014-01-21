@@ -11,8 +11,8 @@ class Coach < User
                     :path => ":rails_root/public/system/coaches/:style/:filename",
                     :url => "/system/coaches/:style/:filename"
 
-  has_many :lessons
+  has_many :lessons, dependent: :destroy
   has_and_belongs_to_many :dance_styles
-  has_many :posts
+  has_many :posts, dependent: :destroy
 
 end
