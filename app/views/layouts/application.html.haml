@@ -3,6 +3,7 @@
 %head.main-layout
   %meta{:charset => "utf-8"}
   %title Alma de la Danza
+  -#%link{rel:"icon", type:"image/ico", href:"/favicon.ico"}
 
   -#%script{src: "http://code.jquery.com/jquery-1.9.1.js",  "data-turbolinks-track" => ""}
   -#%script{src: "http://code.jquery.com/ui/1.10.3/jquery-ui.js",  "data-turbolinks-track" => ""}
@@ -10,7 +11,7 @@
 
   = stylesheet_link_tag    "application", :media => "all"
   = javascript_include_tag "application"
-  = favicon_link_tag 'favicon.ico'
+  -#= favicon_link_tag 'favicon.ico'
   = csrf_meta_tags
 
 
