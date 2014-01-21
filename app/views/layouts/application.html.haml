@@ -1,26 +1,26 @@
 !!!
 %html
-%head.main-layout
-  %meta{:charset => "utf-8"}
-  %title Alma de la Danza
-  -#%link{rel:"icon", type:"image/ico", href:"/favicon.ico"}
+  %head.main-layout
+    %meta{:charset => "utf-8"}
+    %title Alma de la Danza
+    %link{rel:"icon", type:"image/ico", href:"favicon.ico?v=2"}
 
-  -#%script{src: "http://code.jquery.com/jquery-1.9.1.js",  "data-turbolinks-track" => ""}
-  -#%script{src: "http://code.jquery.com/ui/1.10.3/jquery-ui.js",  "data-turbolinks-track" => ""}
-  %script{src:"http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU", type:"text/javascript"}
+    -#%script{src: "http://code.jquery.com/jquery-1.9.1.js",  "data-turbolinks-track" => ""}
+    -#%script{src: "http://code.jquery.com/ui/1.10.3/jquery-ui.js",  "data-turbolinks-track" => ""}
+    %script{src:"http://api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU", type:"text/javascript"}
 
-  = stylesheet_link_tag    "application", :media => "all"
-  = javascript_include_tag "application"
-  -#= favicon_link_tag 'favicon.ico'
-  = csrf_meta_tags
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    -#= favicon_link_tag 'favicon.ico'
+    = csrf_meta_tags
 
 
-%body.main-layout
-  #document
-    .gradient
-    #wrapper-media
-      = render :partial => 'menu/menu'
-      .content
-        = yield
-  #footer_spacer
-    = render :partial => '/footer'
+  %body.main-layout
+    #document
+      .gradient
+      #wrapper-media
+        = render :partial => 'menu/menu'
+        .content
+          = yield
+    #footer_spacer
+      = render :partial => '/footer'
