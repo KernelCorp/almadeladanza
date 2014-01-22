@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131120101425) do
+ActiveRecord::Schema.define(:version => 20140122075912) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "namespace"
@@ -84,6 +84,7 @@ ActiveRecord::Schema.define(:version => 20131120101425) do
     t.string   "path_content_type"
     t.integer  "path_file_size"
     t.datetime "path_updated_at"
+    t.string   "title"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.integer  "gallery_event_id"
@@ -117,6 +118,12 @@ ActiveRecord::Schema.define(:version => 20131120101425) do
     t.text    "preview"
     t.text    "body"
     t.integer "coach_id"
+  end
+
+  create_table "price_lists", :force => true do |t|
+    t.text     "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

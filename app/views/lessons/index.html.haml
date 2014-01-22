@@ -1,5 +1,4 @@
 -#На этой странице используется JQuery UI: http://jqueryui.com/tabs/
-
 #tabs1.lessons.ui-tabs-vertical
   %ul.ui-tabs-nav.scrollable
     %li
@@ -14,5 +13,17 @@
           %span.ui-style-name{id: 'style-'+style.id.to_s, "data-lesson-id" => style.id.to_s}
             = style.name
   %div.ui-tabs-panel#fragment-1.ui-widget-content
+    .price-link
+      %a.to-price{href: '#price-list', name: 'schedule-link'}
+        Перейти к расценкам
     = render partial: 'lessons_table'
     .shadow
+.price-wrapper
+  %h1
+    %a{name: 'price-list'}
+      Наши расценки
+  .price-link
+    %a.to-price{href: '#schedule-link'}
+      Перейти к расписанию
+  .price-list-container
+    = raw @price_list.content
