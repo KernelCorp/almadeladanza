@@ -23,33 +23,36 @@ class window.schedule
     return
 
   bind_halls_filter: ->
-    $('.halls .first a').click ->
-      if $(this).hasClass('active')
-        $(this).removeClass('active')
-        $('#schedule').removeClass('filter-first')
-      else
-        $('.active').removeClass('active')
-        $(this).addClass('active')
-        $('#schedule').addClass('active')
-        $('#schedule').removeClass('filter-second')
-        $('#schedule').addClass('filter-first')
-      schedule::hide_empty_rows()
-      return
-
-    $('.halls .second a').click ->
-      if $(this).hasClass('active')
-        $(this).removeClass('active')
-        $('#schedule').removeClass('filter-second')
-      else
-        $('.active').removeClass('active')
-        $(this).addClass('active')
-        $('#schedule').addClass('active')
-        $('#schedule').removeClass('filter-first')
-        $('#schedule').addClass('filter-second')
-      schedule::hide_empty_rows()
-      return
-
+    $('.halls .first a').click @first_hall_filter_action
+    $('.halls .second a').click @second_hall_filter_action
     return
+
+  first_hall_filter_action: ->
+    if $(this).hasClass('active')
+      $(this).removeClass('active')
+      $('#schedule').removeClass('filter-first')
+    else
+      $('.active').removeClass('active')
+      $(this).addClass('active')
+      $('#schedule').addClass('active')
+      $('#schedule').removeClass('filter-second')
+      $('#schedule').addClass('filter-first')
+    schedule::hide_empty_rows()
+    return
+
+  second_hall_filter_action: ->
+    if $(this).hasClass('active')
+      $(this).removeClass('active')
+      $('#schedule').removeClass('filter-second')
+    else
+      $('.active').removeClass('active')
+      $(this).addClass('active')
+      $('#schedule').addClass('active')
+      $('#schedule').removeClass('filter-first')
+      $('#schedule').addClass('filter-second')
+    schedule::hide_empty_rows()
+    return
+
 
   bind_add_delete_lessons: ->
     return

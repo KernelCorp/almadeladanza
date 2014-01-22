@@ -26,6 +26,20 @@ div.mce-container.mce-tinymce{
 	display: inline-block;
 }
 
+.lessons-form-wrapper{
+	 #schedule{
+		 .hall-1 a:hover, .hall-2 a:hover{
+		   text-decoration: line-through;
+		 }
+		 .ready-to-add{
+			 cursor: pointer;
+			 &:hover{
+				 background: url('/images/Ok.png') 5px 5px no-repeat;
+			 }
+		 }
+	 }
+}
+
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:

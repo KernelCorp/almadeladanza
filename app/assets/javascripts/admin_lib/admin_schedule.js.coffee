@@ -2,6 +2,9 @@
 class adminSchedule extends window.schedule
   constructor: ->
     @show_coaches()
+    $('#dance_style').change ->
+      $('.ready-to-add').removeClass('ready-to-add')
+    $('#coach').change @style_after_fiter
     super
 
 
@@ -17,6 +20,8 @@ class adminSchedule extends window.schedule
         type: 'delete'
         url: '/admin/lessons/'+$(this).data('lesson-id')
         success: ()=>
+          if $('.ready-to-add').length > 0
+            $(this).parent().parent().addClass('ready-to-add')
           $(this).parent().remove()
       }
       return false
@@ -29,7 +34,8 @@ class adminSchedule extends window.schedule
       if $('#schedule').hasClass('filter-second')
         hall_id = 2
       if $(this).children('.hall-'+hall_id).length == 0
-        if $('#dance_style').val() != '' && $('#coach').val() != null && hall_id != undefined
+        if $('#dance_style').val() != '' && $('#coach').val() != '' && hall_id != undefined
+          container = $(this)
           $.ajax {
             type: 'post'
             url: '/admin/lessons'
@@ -43,11 +49,45 @@ class adminSchedule extends window.schedule
               }
             }
             success: (resopnse)=>
+              container.removeClass('ready-to-add')
               adminSchedule::add_lesson(resopnse)
               return
           }
       return
     return
+
+
+
+  first_hall_filter_action: ->
+    super
+    adminSchedule::hall_after_filter('div.hall-1')
+    return
+  second_hall_filter_action: ->
+    super
+    adminSchedule::hall_after_filter('div.hall-2')
+    return
+
+  hall_after_filter: (hall_class)->
+    $('.ready-to-add').removeClass('ready-to-add')
+    if $('#dance_style').val() != '' && $('#coach').val() != '' && ($('#schedule').hasClass('filter-first') || $('#schedule').hasClass('filter-second'))
+      for td in $('td.lesson-container')
+        if $(td).children(hall_class).length == 0
+          $(td).addClass('ready-to-add')
+    else
+      $('.ready-to-add').removeClass('ready-to-add')
+
+
+  style_after_fiter: =>
+    if $('#schedule').hasClass('filter-first') && $('#dance_style').val() != '' && $('#coach').val() != ''
+      @hall_after_filter('div.hall-1')
+      return
+    else
+      $('.ready-to-add').removeClass('ready-to-add')
+    if $('#schedule').hasClass('filter-second') && $('#dance_style').val() != '' && $('#coach').val() != ''
+      @hall_after_filter('div.hall-2')
+    else
+      $('.ready-to-add').removeClass('ready-to-add')
+
 
   show_coaches: ->
     $('#dance_style').change ->
@@ -60,6 +100,7 @@ class adminSchedule extends window.schedule
           }
           success: (request)->
             $('#coach').empty()
+            $('#coach').append('<option></option>')
             for coach in request
               $('#coach').append('<option value="'+coach.id+'">'+coach.name+'</option>')
             return
