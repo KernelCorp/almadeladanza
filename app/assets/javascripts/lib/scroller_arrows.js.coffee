@@ -7,11 +7,11 @@ ready = ->
 
   up_arrow = $("<span id='up_arrow' />")
   up_arrow.click ->
-    api.scrollByY(-100)
+    api.scrollByY(-200)
 
   down_arrow = $("<span id='down_arrow' />")
   down_arrow.click ->
-    api.scrollByY(100)
+    api.scrollByY(200)
 
   $('.jspDrag').append up_arrow
   $('.jspDrag').append down_arrow
