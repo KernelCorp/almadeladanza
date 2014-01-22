@@ -1,8 +1,9 @@
 $tranz_time: 0.2s
 #tabs1.lessons
   .ui-tabs-nav
-    width: 170px
+    width: 200px
     height: 585px
+    font-size: 18px
   .ui-tabs-panel
     width: 720px
   #message-empty
@@ -195,22 +196,58 @@ table#schedule
   display: table
 .price-link
   margin: 5px 0 10px 0
+  padding: 10px 30px 10px 30px
+  display: inline-block
+  margin-left: 100px
+  border: 1px solid #ffffff
+  vertical-align: top
   a.to-price
-    color: #dc6d48
+    color: #5d2e49
     text-decoration: none
     outline: none
     &:hover
-      text-decoration: underline
-
+      color: #dc6d48
+.up-arrow, .down-arrow
+  padding: 10px 10px 10px 10px
+  margin: 5px 0 10px -6px
+  display: inline-block
+  vertical-align: top
+  border: 1px solid #ffffff
+  a
+    display: inline-block
+    height: 13px
+    width: 22px
+.up-arrow
+  a
+    background: url('/images/arrows.png') 0 0 no-repeat
+.down-arrow
+  a
+    background: url('/images/arrows.png') -23px 0 no-repeat
 .price-wrapper
   font-family: Mirta
   margin-bottom: 40px
   color: #849191
+  margin-left: 230px
   .price-list-container
     table
       border-collapse: collapse
-      table, td, th
-        border: #000000 1px solid
+      td, th
+        border: #ffffff 1px solid
+      tr:nth-child(5n+2)
+        td:first-child
+          background-color: #ffffff
+          color: #dc6d48
+      tr:nth-child(6n)
+        td
+          padding: 0
+          height: 5px
+          border: none
+        font-size: 1px
+      tr:first-child
+        td:first-child
+          border: none
+          background-color: transparent
+          color: #dc6d48
 
 
 
