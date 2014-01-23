@@ -80,6 +80,12 @@ ru:
         few: "Поста"
         many: "Блог"
         other: "Постов"
+      price_list:
+        zero: "Прайс листа"
+        one: "Прайс лист"
+        few: "Прайс листа"
+        many: "Прайс лист"
+        other: "Прайс листа"
     attributes:
       admin_user:
         email: "Email"
@@ -131,6 +137,11 @@ ru:
       interior_image:
         path: "Предпросмотр"
         image_view: "Изображение"
+      price_list:
+        id: "Номер"
+        content: "Содержание"
+        created_at: "Создан"
+        updated_at: "Изменен"
 
   devise:
     failure:
