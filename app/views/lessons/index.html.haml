@@ -13,17 +13,14 @@
           %span.ui-style-name{id: 'style-'+style.id.to_s, "data-lesson-id" => style.id.to_s}
             = style.name
   %div.ui-tabs-panel#fragment-1.ui-widget-content
-    .price-link
-      %a.to-price{href: '#price-list', name: 'schedule-link'}
-        Прас-лист
+    .price-link#schedule-link
+      %a.to-price{href: '#price-list'}
+        Прайс-лист
     .up-arrow
       %a.arrow{href: '#price-list'}
     = render partial: 'lessons_table'
     .shadow
-.price-wrapper
-  %h1
-    %a{name: 'price-list'}
-      Наши расценки
+.price-wrapper#price-list
   .price-list-container
     = raw @price_list.content
     .price-link

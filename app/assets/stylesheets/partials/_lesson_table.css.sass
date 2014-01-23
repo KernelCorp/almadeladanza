@@ -194,9 +194,10 @@ table#schedule
 
 .ui-tabs-vertical
   display: table
+
 .price-link
   margin: 5px 0 10px 0
-  padding: 10px 30px 10px 30px
+  padding: 8px 30px 10px 30px
   display: inline-block
   margin-left: 100px
   border: 1px solid #ffffff
@@ -205,6 +206,9 @@ table#schedule
     color: #5d2e49
     text-decoration: none
     outline: none
+    font:
+      family: Mirta
+      size: 18px
     &:hover
       color: #dc6d48
 .up-arrow, .down-arrow
@@ -231,23 +235,76 @@ table#schedule
   .price-list-container
     table
       border-collapse: collapse
+      td
+        font-family: PTSansRegular
+        box-shadow: -1px 0px 1px 0px #faf5ed inset
+        height: 20px
+        p:nth-child(n+2)
+          margin-left: 10px
+          color: #849191
       td, th
         border: #ffffff 1px solid
+        font-size: 16px
+      td:nth-child(2)
+        color: #5d2e49
       tr:nth-child(5n+2)
         td:first-child
-          background-color: #ffffff
+          background-color: #fefbf6
           color: #dc6d48
-      tr:nth-child(6n)
+          padding: 0 25px
+          padding-top: 10px
+          padding-bottom: 10px
+        td:nth-child(2)
+          color: #849191
+        td:nth-child(3)
+          color: #5d2e49
+      tr:nth-child(5n+6)
         td
           padding: 0
           height: 5px
           border: none
-        font-size: 1px
+          box-shadow: none
+          font-size: 1px
       tr:first-child
+        td:nth-child(2)
+          min-width: 100px
+          background-color: #fefbf6
+          height: 35px
+          border-right: 1px solid #f4ece1
+          color: #dc6d48
+        td:nth-child(3)
+          min-width: 190px
+          background-color: #fefbf6
+          height: 35px
+          border-right: 1px solid #f4ece1
+          color: #dc6d48
         td:first-child
+          box-shadow: none
           border: none
           background-color: transparent
           color: #dc6d48
+div.price-wrapper div.price-list-container table tr:nth-child(2n+22)
+  td:first-child
+    background-color: #fefbf6
+    color: #dc6d48
+    padding: 0 25px
+    font-size: 16px
+  td
+    font-size: 16px
+    border: #ffffff 1px solid
+  td:nth-child(3)
+    color: #5d2e49
+div.price-wrapper div.price-list-container table tr:nth-child(2n+23)
+  td
+    padding: 0
+    height: 5px
+    border: none
+    box-shadow: none
+    font-size: 1px
+    background-color: transparent
+  td:first-child
+    background-color: transparent
+    padding: 0
 
 
 
