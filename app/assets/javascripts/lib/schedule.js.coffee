@@ -176,7 +176,8 @@ class window.schedule
     schedule::popover_open = true
     $('.open').popover('hide')
     owner.addClass 'open'
-    $('.ui-widget-content .shadow').show()
+    $('.shadow').show()
+    $('.ui-widget-content').addClass('popover-open')
     $('.shadow').click ->
       $('.open').popover('hide')
       $(this).hide()
@@ -207,6 +208,7 @@ class window.schedule
     return
   hide_popover: (owner)->
     owner.removeClass 'open'
+    $('.ui-widget-content').removeClass('popover-open')
     $('.ui-widget-content .shadow').hide()
     schedule::popover_open = false
     return
