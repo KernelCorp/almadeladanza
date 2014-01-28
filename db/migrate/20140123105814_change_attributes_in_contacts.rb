@@ -1,3 +1,4 @@
+#encoding: utf-8
 class ChangeAttributesInContacts < ActiveRecord::Migration
   def change
     contacts = Contact.all.first
