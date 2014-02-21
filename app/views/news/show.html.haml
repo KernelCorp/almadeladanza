@@ -9,7 +9,7 @@
     - block_class = 'with_borders' if (news.id == @one.id)
     #news_block{class: block_class}
       #news_time
-        = news.created_at.strftime("%m.%d.%Y")
+        = news.created_at.strftime("%d.%m.%Y")
       - if news.id == @one.id
         #current_news_title
           = news.title
