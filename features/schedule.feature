@@ -1,5 +1,7 @@
 Feature: Schedule
   In order an admin can edit schedule and user can see one
+  Background:
+    Given Price list with content "Naletay, podeshvelo"
 
   @javascript
   Scenario: show for user
@@ -68,6 +70,15 @@ Feature: Schedule
      And I should see time in popup
      And I should see day in popup
      And I should see hall in popup
+
+  @javascript
+  Scenario: Click to no vacancy lesson
+    Given Style with preview  "yoga", "yogagoga"
+      And Coach named "Steak", Style - "yoga"
+      And "yoga" lesson at on "Tuesday" at 11:30 in hall 1 coach "Steak", full
+     When I go to "/lessons"
+      And I click to lesson "yoga" on "Tuesday" at 11:30, hall 1
+     Then I shouldn't see pop up
 
   Scenario: Admin
     Given I sign in as an admin

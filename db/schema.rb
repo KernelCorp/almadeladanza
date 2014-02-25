@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140123105814) do
+ActiveRecord::Schema.define(:version => 20140225054220) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "namespace"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(:version => 20140123105814) do
     t.integer  "dance_style_id"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.boolean  "no_vacancy"
   end
 
   create_table "news", :force => true do |t|
@@ -136,7 +137,6 @@ ActiveRecord::Schema.define(:version => 20140123105814) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
-    t.string   "type"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
     t.string   "name"

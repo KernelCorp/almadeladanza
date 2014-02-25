@@ -37,7 +37,7 @@ class Lesson < ActiveRecord::Base
   }
 
 
-  attr_accessible :day, :time, :dance_style_id, :coach_id, :hall_id
+  attr_accessible :day, :time, :dance_style_id, :coach_id, :hall_id, :no_vacancy
   belongs_to :coach
   belongs_to :hall
   belongs_to :dance_style

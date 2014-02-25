@@ -79,10 +79,11 @@ class window.schedule
     td_day = '.sc-day-'+lesson.day
     td_time = '.sc-time-'+lesson.time
     hall_class = 'hall-'+lesson.hall_id
-#    $(td_day+td_time).empty()
     $(td_day+td_time).append('<div class="'+hall_class+'" > <a data-toggle="popover"  class="on-schedule"  ' +
      'data-lesson-id="'+lesson.id+'">'+$('span.ui-style-name#style-'+lesson.dance_style_id).text()+'</a></div>')
     element = $(td_day+td_time+' .'+hall_class+ ' a')
+    if lesson.no_vacancy
+      element.addClass('no-vacancy')
     @bind_delete(element)
     if $('.additional-info').length > 0
       coach = $('.ui-coach-name#coach-'+lesson.coach_id).text()
@@ -90,12 +91,12 @@ class window.schedule
       time =  $('.ui-time#time-'+lesson.time).text()
       title = "Тренер: "+coach+" день: "+day+" время:"+time
       element.attr('title', title)
+      element.attr('data-coach', coach)
+      element.attr('data-time', time)
+      element.attr('data-day', day)
     element.parent().parent().addClass('not-empty')
-#    if element.parent().parent().prev().children('.time').length > 0
-#      element.parent().parent().prev().addClass('not-empty')
-#    if element.parent().parent().children('.time').length > 0
-#      element.parent().parent().next().addClass('not-empty')
-    @get_popover_html(element, lesson)
+    if !lesson.no_vacancy
+      @get_popover_html(element, lesson)
     return
 
 

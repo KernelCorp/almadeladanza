@@ -18,26 +18,65 @@
 @import "partials/fonts";
 
 .additional-info{
-	display: none;
+  display: none;
 }
 
 
 div.mce-container.mce-tinymce{
-	display: inline-block;
+  display: inline-block;
 }
 
 .lessons-form-wrapper{
-	 #schedule{
-		 .hall-1 a:hover, .hall-2 a:hover{
-		   text-decoration: line-through;
-		 }
-		 .ready-to-add{
-			 cursor: pointer;
-			 &:hover{
-				 background: url('/images/Ok.png') 5px 5px no-repeat;
-			 }
-		 }
-	 }
+   #schedule{
+     .hall-1 a:hover, .hall-2 a:hover{
+       text-decoration: line-through;
+     }
+     .ready-to-add{
+       cursor: pointer;
+       &.hover{
+	       position: relative;
+	       &:before{
+		       content: '';
+		       position: absolute;
+		       left: 5px;
+		       top: 5px;
+		       width: 30px;
+		       height: 30px;
+           transition: none;
+           background: url('/images/Ok.png') 5px 5px no-repeat;
+	       }
+       }
+     }
+   }
+}
+
+.admin-modal-shadow{
+	top: 0;
+	left: 0;
+	display: none;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: #000000;
+	opacity: 0.7;
+	z-index: 10000;
+}
+
+.admin-popover{
+	z-index: 10000;
+	display: none;
+	position: fixed;
+	margin: auto;
+	height: 150px;
+	width: 300px;
+	top: 100px;
+	left: 0;
+	right: 0;
+	background-color: #ffffff;
+	padding: 30px;
+	font-size: 18px;
+	font-family: "PT Sans";
+	line-height: 30px;
 }
 
 

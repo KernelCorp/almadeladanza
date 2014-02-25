@@ -13,18 +13,46 @@ class adminSchedule extends window.schedule
 
 
   bind_delete: (element)->
+
     if element == null
       element = $('a.on-schedule')
-    element.click ->
-      $.ajax {
-        type: 'delete'
-        url: '/admin/lessons/'+$(this).data('lesson-id')
-        success: ()=>
-          if $('.ready-to-add').length > 0
-            $(this).parent().parent().addClass('ready-to-add')
-          $(this).parent().remove()
-      }
-      return false
+    element.click @show_admin_popover
+
+
+
+  delete_lesson: ->
+    $.ajax {
+      type: 'delete'
+      url: '/admin/lessons/'+$(this).data('lesson-id')
+      success: ()=>
+        elem = $("a[data-lesson-id=#{$(this).data('lesson-id')}]")
+        if $('.ready-to-add').length > 0
+          $(elem).parent().parent().addClass('ready-to-add')
+        $(elem).parent().remove()
+        adminSchedule::hide_admin_popover()
+    }
+    return false
+
+  show_admin_popover: ->
+    $('.admin-popover .style').replaceWith("<span class='style'>#{$(this).text()}</span>")
+    $('.admin-popover .coach').replaceWith("<span class='coach'>#{$(this).data('coach')}</span>")
+    $('.admin-popover .time').replaceWith("<span class='time'>#{$(this).data('time')}</span>")
+    $('.admin-popover .day').replaceWith("<span class='day'>#{$(this).data('day')}</span>")
+    $('.admin-modal-shadow').show()
+    $('.admin-popover').show()
+    $('.admin-modal-shadow').click adminSchedule::hide_admin_popover
+    $('.modal-actions .delete').attr('data-lesson-id', $(this).data('lesson-id'))
+    $('.modal-actions .delete').click adminSchedule::delete_lesson
+    return
+
+  hide_admin_popover: ->
+    $('.admin-modal-shadow').hide()
+    $('.admin-popover').hide()
+    return
+
+  make_busy: ->
+    return
+
 
   bind_add_delete_lessons: ->
     @bind_delete(null)
@@ -56,15 +84,23 @@ class adminSchedule extends window.schedule
       return
     return
 
-
+  bind_hover: ->
+    $('.ready-to-add').mouseenter ->
+      $(this).addClass('hover')
+      return
+    $('.ready-to-add').mouseleave ->
+      $('.hover').removeClass('hover')
+      return
 
   first_hall_filter_action: ->
     super
     adminSchedule::hall_after_filter('div.hall-1')
+    adminSchedule::bind_hover()
     return
   second_hall_filter_action: ->
     super
     adminSchedule::hall_after_filter('div.hall-2')
+    adminSchedule::bind_hover()
     return
 
   hall_after_filter: (hall_class)->

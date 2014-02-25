@@ -1,5 +1,10 @@
 #encoding: utf-8
 
+Given(/^Price list with content "(.*?)"$/) do |content|
+  PriceList.create! content: content
+end
+
+
 Given(/^Style named "(.*?)"$/) do |style_name|
   DanceStyle.create! name: style_name
 end
@@ -9,7 +14,7 @@ Given(/^Coach named "(.*?)", Style \- "(.*?)"$/) do |coach_name, style_name|
   @dance_style.coaches.create! name: coach_name, email: coach_name+'@mail.ru', password: 'password'
 end
 
-Given(/^"(.*?)" lesson at on "(.*?)" at (\d+):(\d+) in hall (\d+) coach "(.*?)"$/) do |style_name, week_day, start_hour, start_minute, hall_number, coach_name|
+Given(/^"(.*?)" lesson at on "(.*?)" at (\d+):(\d+) in hall (\d+) coach "(.*?)"(, full)?$/) do |style_name, week_day, start_hour, start_minute, hall_number, coach_name, raw_vacancy|
   @dance_style = DanceStyle.find_by_name style_name
   week_day_num = Lesson::LessonDay.key week_day.downcase
   start = start_hour.to_s+'.'+start_minute.to_s
@@ -25,7 +30,9 @@ Given(/^"(.*?)" lesson at on "(.*?)" at (\d+):(\d+) in hall (\d+) coach "(.*?)"$
     Hall.create! name: 'hall-1'
     Hall.create! name: 'hall-2'
   end
-  Lesson.create! dance_style_id: @dance_style.id, day: week_day_num, time: time_num, hall_id: hall_number, coach_id: @coach.id
+  no_vacancy = (raw_vacancy == ', full')
+  Lesson.create! dance_style_id: @dance_style.id, day: week_day_num, time: time_num, hall_id: hall_number, coach_id: @coach.id, no_vacancy: no_vacancy
+
 end
 
 When(/^I click to "(.*?)"$/) do |style_name|
@@ -119,8 +126,9 @@ end
 
 
 
-Then(/^I should see pop up$/) do
-  page.should have_css '.popover'
+Then(/^I should(n't)? see pop up$/) do |no|
+
+  (no == "n't") ? page.should_not(have_css('.popover')) : page.should(have_css('.popover'))
 end
 
 Then(/^I should see link to coach "(.*?)" in popup$/) do |coach_name|
