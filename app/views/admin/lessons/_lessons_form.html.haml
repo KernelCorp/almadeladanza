@@ -29,25 +29,4 @@
           = t(Lesson::LessonDay[i])
 
     = render partial: 'lessons/lessons_table'
-    .admin-modal-shadow
-    .admin-popover
-      .modal-body
-        %p
-          Направление -
-          %span.style
-        %p
-          День -
-          %span.day
-        %p
-          Время -
-          %span.time
-        %p
-          Тренер -
-          %span.coach
-      .modal-actions
-        %button.delete
-          Удалить
-        %button.busy
-          Группа набрана
-        %button.cancel
-          Отмена
+    = render partial: 'admin_modal'

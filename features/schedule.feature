@@ -80,33 +80,6 @@ Feature: Schedule
       And I click to lesson "yoga" on "Tuesday" at 11:30, hall 1
      Then I shouldn't see pop up
 
-  Scenario: Admin
-    Given I sign in as an admin
-    When I go to "admin"
-     And I click to button "lessons"
-    Then I should see grid for lesson
-
-
-  Scenario: Admin delete lesson
-    Given Style with preview  "yoga", "yogaga"
-      And Coach named "Stek", Style - "yoga"
-      And "yoga" lesson at on "Tuesday" at 11:30 in hall 1 coach "Stek"
-      And I sign in as an admin
-    When  I go to "admin/lessons"
-     And I click to "yoga" in cell ("Tuesday", 11:30)
-    Then I shouldn't see "yoga" in cell ("Tuesday", 11:30)
-
-  Scenario: fast create lessons
-    Given I sign in as an admin
-      And Style named "yoga" with description "yogaga"
-      And Coach named "Stek", Style - "yoga"
-    When I go to "admin/lessons"
-     And I click to button "fast create"
-     And I select coach "Stek"
-     And I select hall 1
-     And I click to cell ("Tuesday", 11:30)
-    Then I see "yoga" in cell ("Tuesday", 11:30)
-
 
 
 

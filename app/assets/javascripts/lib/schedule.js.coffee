@@ -94,6 +94,7 @@ class window.schedule
       element.attr('data-coach', coach)
       element.attr('data-time', time)
       element.attr('data-day', day)
+      element.attr('data-busy', lesson.no_vacancy)
     element.parent().parent().addClass('not-empty')
     if !lesson.no_vacancy
       @get_popover_html(element, lesson)

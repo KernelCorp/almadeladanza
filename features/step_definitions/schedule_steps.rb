@@ -156,39 +156,3 @@ end
 Then(/^I should see hall in popup$/) do
   page.should have_css '.lesson-info span', text: 'зал'
 end
-
-Given(/^I sign in as an admin$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^I click to button "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I should see grid for lesson$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^I click to cell \("(.*?)", (\d+):(\d+)\)$/) do |arg1, arg2, arg3|
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I should see form for lessons$/) do
-  pending # express the regexp above with the code you wish you had
-end
-
-Then(/^I should see select box for "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-When(/^I click to "(.*?)" in cell \("(.*?)", (\d+):(\d+)\)$/) do |arg1, arg2, arg3, arg4|
-  pending # express the regexp above with the code you wish you had
-end
-
-And(/^I select coach "(.*?)"$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
-
-And(/^I select hall (\d+)$/) do |arg1|
-  pending # express the regexp above with the code you wish you had
-end
