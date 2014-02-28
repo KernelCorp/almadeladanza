@@ -7,7 +7,7 @@ class adminSchedule extends window.schedule
     $('#coach').change @style_after_fiter
     $('.modal-actions .delete').click adminSchedule::delete_lesson
     $('.modal-actions .busy').click adminSchedule::make_busy
-    $('.modal-actions .cancel').click adminSchedule::make_busy
+    $('.modal-actions .cancel').click adminSchedule::hide_admin_popover
     super
 
 
@@ -56,7 +56,7 @@ class adminSchedule extends window.schedule
   hide_admin_popover: ->
     $('.admin-modal-shadow').hide()
     $('.admin-popover').hide()
-    return
+    return false
 
   make_busy: ->
     lesson_id = $('.admin-popover .lesson-id').val()
