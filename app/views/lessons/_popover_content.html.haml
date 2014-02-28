@@ -23,9 +23,14 @@
   .price-link
     %a.to-price.close-button{href: '#price-list'}
       стоимость занятий
-  .button-wrap
-    %button.sign
-      Записаться
+  - if @lesson.no_vacancy?
+    .message-no-vacancy
+      %p
+        Группа набрана
+  -else
+    .button-wrap
+      %button.sign
+        Записаться
 
   = form_for Client.new, remote: true, html: {class: 'inputs'} do |f|
     .input-wrap

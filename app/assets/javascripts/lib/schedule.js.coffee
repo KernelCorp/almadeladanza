@@ -96,8 +96,8 @@ class window.schedule
       element.attr('data-day', day)
       element.attr('data-busy', lesson.no_vacancy)
     element.parent().parent().addClass('not-empty')
-    if !lesson.no_vacancy
-      @get_popover_html(element, lesson)
+#    if !lesson.no_vacancy
+    @get_popover_html(element, lesson)
     return
 
 
