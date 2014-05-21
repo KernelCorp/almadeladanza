@@ -26,6 +26,10 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-42469013-3', 'almadeladanza.ru');
 ga('send', 'pageview');
 
+ga('create', 'UA-50810054-1', 'almadeladanza.ru');
+ga('send', 'pageview');
+
+
 
 (function (d, w, c) {
     (w[c] = w[c] || []).push(function() {
@@ -48,3 +52,4 @@ ga('send', 'pageview');
         d.addEventListener("DOMContentLoaded", f, false);
     } else { f(); }
 })(document, window, "yandex_metrika_callbacks");
+
