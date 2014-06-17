@@ -5,7 +5,7 @@
         %span.ui-style-name{id: '', "data-lesson-id" => ''}
           Все фотографии
     - i = 0
-    - @gallery_events.each do |event|
+    - @gallery_events.reverse_each do |event|
       - i = i + 1
       %li
         %a.ui-tabs-anchor{href: "#fragment-1"}

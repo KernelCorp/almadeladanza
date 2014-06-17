@@ -1,6 +1,6 @@
 .images-list.gallery-events
   - i = 0
-  - @gallery_events.each do |event|
+  - @gallery_events.reverse_each do |event|
     - event.images.each do |image|
       .image-wrapper
         %a.gallery-image{ rel: 'gallery', href: image.path.url}

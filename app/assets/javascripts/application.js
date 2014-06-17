@@ -23,8 +23,22 @@
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', 'UA-42469013-3', 'almadeladanza.ru');
+
+ga('create', 'UA-50810054-1', 'almadeladanza.ru');
 ga('send', 'pageview');
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-42469013-3']);
+_gaq.push(['_setDomainName', 'almadeladanza.ru']);
+_gaq.push(['_setAllowLinker', true]);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
 
 
 (function (d, w, c) {
@@ -48,3 +62,4 @@ ga('send', 'pageview');
         d.addEventListener("DOMContentLoaded", f, false);
     } else { f(); }
 })(document, window, "yandex_metrika_callbacks");
+
