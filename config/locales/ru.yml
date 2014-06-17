@@ -86,6 +86,12 @@ ru:
         few: "Прайс листа"
         many: "Прайс лист"
         other: "Прайс листа"
+      contact:
+        zero: "Контактов"
+        one: "Контакты"
+        few: "Контактов"
+        many: "Контакты"
+        other: "Контактов"
     attributes:
       admin_user:
         email: "Email"
@@ -142,6 +148,10 @@ ru:
         content: "Содержание"
         created_at: "Создан"
         updated_at: "Изменен"
+      contact:
+        phone: 'Телефон'
+        email: 'Email'
+        address: 'Адрес'
 
   devise:
     failure:
