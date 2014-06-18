@@ -2,8 +2,10 @@
   %p
     Запись по телефону
     %br
-    %a{href: 'tel:'+@contacts.phone}
-      = @contacts.phone
+    - @contacts.phone.split(',').each do |phone|
+      %a{href: 'tel:'+phone}
+        = phone
+      %br
   %p
     %span.underline
       %a{href: 'mailto:'+@contacts.email}
