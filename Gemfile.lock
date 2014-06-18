@@ -155,8 +155,7 @@ GEM
     mini_portile (0.5.2)
     multi_json (1.8.4)
     multi_test (0.0.3)
-    mysql2 (0.3.11)
-    mysql2 (0.3.11-x86-mingw32)
+    mysql2 (0.3.14)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-sftp (2.1.2)
@@ -296,7 +295,7 @@ DEPENDENCIES
   jquery-turbolinks
   jquery-ui-rails
   meta_search (>= 1.1.0.pre)
-  mysql2 (= 0.3.11)
+  mysql2 (= 0.3.14)
   nginx-config
   paperclip
   rails (~> 3.2.13)
