@@ -5,7 +5,7 @@ gem 'rails', '~>3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', '0.3.14'
+gem 'mysql2', '0.3.11'
 gem 'haml-rails'
 gem "slim-rails", "~> 2.0.3"
 gem 'activeadmin'
@@ -30,7 +30,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', '<3.0.0'
 gem 'jquery-ui-rails'
 
 gem 'fancybox2-rails', '~> 0.2.4'
