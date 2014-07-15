@@ -24,3 +24,19 @@
           = yield
     #footer_spacer
       = render :partial => '/footer'
+    #main_shadow
+    #main_popover
+      .popover-content
+        = form_for Client.new, remote: true, html: {class: 'inputs'} do |f|
+          .input-wrap
+            = f.text_field :name, type: 'text', placeholder: 'Ваше имя'
+          .input-wrap
+            = f.text_field :phone, type: 'text', placeholder: 'Ваш контактный телефон'
+          .input-wrap
+            = f.text_field :email, type: 'text', placeholder: 'Ваш email'
+          %label.validation_message Заполните все поля, пожалуйста
+          .button-wrap
+            = f.submit class: 'submit_button', value: 'Отправить заявку'
+
+    :javascript
+      menu_popup = new MenuPopup;
