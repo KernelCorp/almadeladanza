@@ -45,6 +45,7 @@ group :development do
   gem 'capistrano'
   gem 'rvm-capistrano'
   gem 'nginx-config'
+  gem 'net-ssh', '~> 2.7.0'
 end
 # Use unicorn as the app server
 gem 'unicorn', :platforms => :ruby
