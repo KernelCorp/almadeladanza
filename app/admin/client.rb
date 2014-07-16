@@ -6,7 +6,7 @@ ActiveAdmin.register Client do
     default_actions
   end
 
-  show do |client|
+  show do
     attributes_table do
       row :name
       row :email
