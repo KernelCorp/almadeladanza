@@ -26,6 +26,12 @@ ru:
         few: "Учителя"
         many: "Учителя"
         other: "Учителей"
+      client:
+        zero: "Клиентов"
+        one: "Клиент"
+        few: "Клиенты"
+        many: "Клиенты"
+        other: "Клиентов"
       comment:
         zero: "Комментариев"
         one: "Комментарий"
@@ -140,6 +146,9 @@ ru:
         sign_in_count: "Сколько раз заходил"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
+      client:
+        name: Имя
+        phone: Телефон
       interior_image:
         path: "Предпросмотр"
         image_view: "Изображение"
