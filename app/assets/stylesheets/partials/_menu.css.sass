@@ -102,10 +102,22 @@
   z-index: 10
   position: relative
   #sign_up
+    text-align: center
+    line-height: 35px
     position: absolute
-    right: 200px
-    top: 50px
+    right: 130px
+    top: 23px
     z-index: 10000
+    @include background(linear-gradient(to right, #dc6d48,  #5d2e49))
+    border: none
+    color: #f4ece1
+    width: 195px
+    height: 35px
+    margin-top: 15px
+    &:hover
+      @include background(linear-gradient(to left top, #dc6d48,  #5d2e49))
+    &:active
+      border: 2px #000000 solid
   ul.menu
     opacity: 0.8
     list-style: none
