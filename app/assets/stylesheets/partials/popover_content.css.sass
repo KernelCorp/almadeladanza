@@ -37,16 +37,17 @@
     .button-wrap
       text-align: center
       button, .submit_button
+        @include background(linear-gradient(right, #dc6d48,  #5d2e49))
         background: linear-gradient(to right, #dc6d48,  #5d2e49)
-        background: -webkit-linear-gradient(left, #dc6d48,  #5d2e49)
         border: none
         color: #f4ece1
         width: 195px
         height: 35px
         margin-top: 15px
+        font-family: Arial
         &:hover
+          @include background(linear-gradient(left top, #dc6d48,  #5d2e49))
           background: linear-gradient(to left top, #dc6d48,  #5d2e49)
-          background: -webkit-linear-gradient(right top, #dc6d48,  #5d2e49)
         &:active
           border: 2px #000000 solid
     .close-popover
