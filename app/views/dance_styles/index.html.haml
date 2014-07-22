@@ -10,14 +10,14 @@
     - i = 0
     - @styles.each do |style|
       - i = i + 1
-      %li
-        %a.ui-style-name.ui-tabs-anchor{href: '#fragment-' + i.to_s}
+      %li{'data-slug' => "##{style.slug}"}
+        %a.ui-style-name.ui-tabs-anchor{href: "##{style.slug}" }
           %span
             = style.name
   - i = 0
   - @styles.each do |style|
     - i = i + 1
-    %div.ui-widget-content.ui-tabs-panel{id: 'fragment-'+ i.to_s}
+    %div.ui-widget-content.ui-tabs-panel{id: "#{style.slug}"}
       %p
         = raw style.description
       .style_coaches
@@ -28,5 +28,9 @@
             %span
               %a{href: '/coaches/' + coach.id.to_s}
                 = coach.name
+
+:javascript
+  new DanceStylesHashNav
+
 
 

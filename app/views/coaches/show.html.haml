@@ -45,7 +45,7 @@
             %ul
               - coach.dance_styles.each do |style|
                 %li
-                  %a{href: '/dance_styles/' + style.id.to_s}
+                  %a{href: "/dance_styles##{style.slug}"}
                     = style.name
         .coach_biography
           = raw coach.biography

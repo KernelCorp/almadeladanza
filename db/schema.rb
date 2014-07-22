@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140225054220) do
+ActiveRecord::Schema.define(:version => 20140722083507) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "namespace"
@@ -57,7 +57,10 @@ ActiveRecord::Schema.define(:version => 20140225054220) do
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
     t.text     "preview"
+    t.string   "slug"
   end
+
+  add_index "dance_styles", ["slug"], :name => "index_dance_styles_on_slug", :unique => true
 
   create_table "feedbacks", :force => true do |t|
     t.string   "name"
@@ -84,6 +87,7 @@ ActiveRecord::Schema.define(:version => 20140225054220) do
     t.string   "path_content_type"
     t.integer  "path_file_size"
     t.datetime "path_updated_at"
+    t.string   "title"
     t.datetime "created_at",        :null => false
     t.datetime "updated_at",        :null => false
     t.integer  "gallery_event_id"

@@ -6,7 +6,7 @@
     %p
       %a{href: '/about'}Философия школы
     %p
-      %a.active_link{href: '/coaches'}Наши учителя
+      %a.active_link{href: '/coaches'}Наша команда
     %p
       %a{href: '/interior_images'}Интерьеры школы
     %p
@@ -25,6 +25,6 @@
           %ul
             - coach.dance_styles.each do |style|
               %li
-                %a{href: '/dance_styles/' + style.id.to_s}
+                %a{href: "/dance_styles##{style.slug}"}
                   = style.name
       .coach_biography

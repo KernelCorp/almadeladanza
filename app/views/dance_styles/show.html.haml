@@ -1,13 +1,13 @@
 %div
   %img.dance_styles_bg{:src => '/images/dance_styles_background.png'}
 #tabs.ui-tabs-vertical
-  %ul.ui-tabs-nav
+  %ul.ui-tabs-nav.scrollable
     - i = 0
     - @styles.each do |style|
       - i = i + 1
       - (@style == style) ? active = 'ui-tabs-active' : ''
       %li{class: active}
-        %a.ui-style-name.ui-tabs-anchor{href: "#fragment-" + i.to_s}
+        %a.ui-style-name.ui-tabs-anchor{href: "##{style.slug}"}
           %span
             = style.name
   - i = 0
