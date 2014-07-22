@@ -1,3 +1,0 @@
-class @DanceStylesHashNav
-  constructor: ->
-    return

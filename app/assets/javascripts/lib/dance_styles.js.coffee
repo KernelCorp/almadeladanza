@@ -7,12 +7,15 @@ ready = ->
     $(this).parent().addClass('ui-tabs-active')
     return
   init = ->
-    content = location.hash || $('.ui-widget-content')[0]
-    nav_tab = "[data-slug=#{location.hash}]" || $('ul.ui-tabs-nav li')[0]
-    $('ul.ui-tabs-nav li').removeClass('ui-tabs-active')
-    $(nav_tab).addClass('ui-tabs-active')
-    $('.ui-widget-content').hide()
-    $(content).show()
+    if location.hash == ''
+      location.hash = $($('ul.ui-tabs-nav li')[0]).data('slug')
+    else
+      content = location.hash
+      nav_tab = "[data-slug=#{location.hash}]"
+      $('ul.ui-tabs-nav li').removeClass('ui-tabs-active')
+      $(nav_tab).addClass('ui-tabs-active')
+      $('.ui-widget-content').hide()
+      $(content).show()
   if document.location.pathname == '/dance_styles' || document.location.pathname == '/lessons'
     init()
   $(window).hashchange init
