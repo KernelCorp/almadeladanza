@@ -8,9 +8,11 @@ ready = ->
     return
   init = ->
     if location.hash == ''
-      location.hash = $($('ul.ui-tabs-nav li')[0]).data('slug')
+      hash = $($('ul.ui-tabs-nav li')[0]).data('slug')
+#      hash = hash.substring(0, hash.length-1)
+      location.hash = hash
     else
-      content = location.hash
+      content = location.hash+'1'
       nav_tab = "[data-slug=#{location.hash}]"
       $('ul.ui-tabs-nav li').removeClass('ui-tabs-active')
       $(nav_tab).addClass('ui-tabs-active')
