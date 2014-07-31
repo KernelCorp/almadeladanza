@@ -12,7 +12,8 @@ ready = ->
 #      hash = hash.substring(0, hash.length-1)
       location.hash = hash
     else
-      content = location.hash+'1'
+      content = location.hash
+      content += '1' if document.location.pathname == '/dance_styles'
       nav_tab = "[data-slug=#{location.hash}]"
       $('ul.ui-tabs-nav li').removeClass('ui-tabs-active')
       $(nav_tab).addClass('ui-tabs-active')
