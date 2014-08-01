@@ -10,5 +10,5 @@ class GalleryImage < Image
                     },
                     :path => ':rails_root/public/system/gallery_images/:style/:filename',
                     :url => '/system/gallery_images/:style/:filename'
-
+  validates_attachment_content_type :path, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 end
