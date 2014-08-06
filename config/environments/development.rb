@@ -35,6 +35,8 @@ Almadeladanza::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
+  Paperclip.options[:command_path] ='C:\Program Files (x86)\ImageMagick-6.7.9-Q16'
+
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       address:              'smtp.gmail.com',
