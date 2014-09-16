@@ -9,6 +9,6 @@ class Image < ActiveRecord::Base
                     },
                     :path => ':rails_root/public/system/images/:style/:filename',
                     :url => '/system/images/:style/:filename'
-
+  do_not_validate_attachment_file_type :path
 
 end
