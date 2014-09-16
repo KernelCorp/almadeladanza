@@ -26,6 +26,12 @@ ru:
         few: "Учителя"
         many: "Учителя"
         other: "Учителей"
+      promo:
+        zero: Промо
+        one: Промо
+        few: Промо
+        many: Промо
+        other: Промо
       client:
         zero: "Клиентов"
         one: "Клиент"
@@ -99,6 +105,8 @@ ru:
         many: "Контакты"
         other: "Контактов"
     attributes:
+      promo:
+        image: Картинка
       admin_user:
         email: "Email"
         current_sign_in_at: "Вошел в систему"

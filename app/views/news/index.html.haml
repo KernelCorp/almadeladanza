@@ -2,8 +2,9 @@
   .gradient
 
 - content_for :citation do
-  #sudden_advert
-    %img{src: '/images/sale.png'}
+  - unless Promo.last.nil?
+    #sudden_advert
+      = image_tag  Promo.last.image.url
 
   #citation_container
     Я не пытаюсь танцевать лучше,
