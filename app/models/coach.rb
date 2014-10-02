@@ -15,4 +15,5 @@ class Coach < User
   has_and_belongs_to_many :dance_styles
   has_many :posts, dependent: :destroy
 
+  validates_attachment_content_type :avatar, content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
 end
